@@ -46,39 +46,7 @@
             </h2>
           </section>
 
-          <div class="card">
-            <div class="card-image">
-              <figure class="image">
-                <img
-                  src="https://bulma.io/images/placeholders/1280x960.png"
-                  alt="Placeholder image"
-                />
-              </figure>
-            </div>
-            <div class="card-content">
-              <h3 class="title is-5">
-                Handling Errors in Ruby on Rails Applications
-              </h3>
-              <div class="article-meta">
-                <span>Category: </span><strong>Web development</strong>
-                <span>Author: </span><strong>Seabastian Wilgosz</strong>
-              </div>
-              <div class="content">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris.
-                </p>
-              </div>
-              <div class="level">
-                <div class="level-left"></div>
-                <div class="level-right">
-                  <div class="level-item">
-                    read more...
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <article-list :articles="articles" />
         </div>
         <aside class="column is-one-third-tablet">
           <section class="header">
@@ -94,10 +62,38 @@
 
 <script>
 import Logo from "~/components/Logo.vue";
+import ArticleList from "~/components/organisms/ArticleList";
 
 export default {
   components: {
+    ArticleList,
     Logo
+  },
+  data() {
+    return {
+      articles: [
+        {
+          id: 1,
+          attributes: {
+            slug: "handling-errors-rails",
+            title: "Handling Errors in ruby on Rails API applications",
+            category: "Web development",
+            excerpt:
+              "If you struggle with the correct way of handling errors \
+              in Rails Applications, this article is a solution for all \
+              your problems"
+          },
+          relationships: {
+            author: {
+              data: {
+                type: "users",
+                id: 1
+              }
+            }
+          }
+        }
+      ]
+    };
   }
 };
 </script>
@@ -105,27 +101,5 @@ export default {
 <style>
 .header {
   padding: 40px 0;
-}
-.card {
-  display: flex;
-  align-items: flex-start;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-    0 0px 0 1px rgba(10, 10, 10, 0.02);
-}
-
-.is-circle {
-  border-radius: 50%;
-}
-
-.article-meta {
-  font-size: 0.8rem;
-  margin-top: -10px;
-  margin-bottom: 20px;
-}
-
-.card-image {
-  max-width: 50%;
 }
 </style>
