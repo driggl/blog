@@ -73,7 +73,7 @@ export default {
     return {
       articles: [
         {
-          id: 1,
+          id: "1",
           attributes: {
             slug: "handling-errors-rails",
             title: "Handling Errors in ruby on Rails API applications",
@@ -87,7 +87,7 @@ export default {
             author: {
               data: {
                 type: "users",
-                id: 1
+                id: "1"
               }
             }
           }

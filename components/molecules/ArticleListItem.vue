@@ -50,6 +50,11 @@ export default {
       type: String,
       required: true
     }
+  },
+  computed: {
+    author() {
+      return "Sebastian Wilgosz";
+    }
   }
 };
 </script>
