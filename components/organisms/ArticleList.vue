@@ -4,7 +4,7 @@
       :key="id"
       :title="attributes.title"
       :content="attributes.excerpt"
-      :category="attributes.category"
+      :category="'Web development'"
       :imageUrl="attributes.thumbnail.small"
       :authorId="relationships.author.data.id"
       v-for="[id, { attributes, relationships }] in articles"
