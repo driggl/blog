@@ -53,6 +53,13 @@
             <h2 class="title is-4">
               Do you like this content?
             </h2>
+            <p>
+              <i
+                >Join to our Newsletter for weekly updates about new articles
+                and <strong>free programming tips!</strong></i
+              >
+            </p>
+            <email-subscription-form />
           </section>
         </aside>
       </div>
@@ -64,10 +71,12 @@
 import { mapGetters } from "vuex";
 import Logo from "~/components/Logo.vue";
 import ArticleList from "~/components/organisms/ArticleList";
+import EmailSubscriptionForm from "~/components/molecules/EmailSubscriptionForm";
 
 export default {
   components: {
     ArticleList,
+    EmailSubscriptionForm,
     Logo
   },
   computed: {
