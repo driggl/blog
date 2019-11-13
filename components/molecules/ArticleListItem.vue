@@ -1,24 +1,28 @@
 <template>
   <div class="card">
-    <div class="card-image">
-      <figure class="image">
-        <img :src="imageUrl" alt="Placeholder image" />
-      </figure>
-    </div>
-    <div class="card-content">
-      <h3 class="title is-5">{{ title }}</h3>
-      <div class="article-meta">
-        <span>Category: </span><strong>{{ category }}</strong>
-        <span>Author: </span><strong>{{ author }}</strong>
+    <div class="columns">
+      <div class="column is-half">
+        <figure class="image">
+          <img :src="imageUrl" alt="Placeholder image" />
+        </figure>
       </div>
-      <div class="content">
-        <p>{{ content }}</p>
-      </div>
-      <div class="level">
-        <div class="level-left"></div>
-        <div class="level-right">
-          <div class="level-item">
-            read more...
+      <div class="card-content">
+        <h3 class="title is-5">{{ title }}</h3>
+        <div class="article-meta">
+          <span>Category: </span><strong>{{ category }}</strong>
+          <span>Author: </span><strong>{{ author }}</strong>
+        </div>
+        <div class="content">
+          <p>{{ content }}</p>
+        </div>
+        <div class="level">
+          <div class="level-left"></div>
+          <div class="level-right">
+            <div class="level-item">
+              <a href="/">
+                read more...
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -73,6 +77,7 @@ export default {
   border-radius: 10px;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
     0 0px 0 1px rgba(10, 10, 10, 0.02);
+  margin-bottom: 20px;
 }
 .card-image {
   max-width: 50%;
