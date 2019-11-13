@@ -61,6 +61,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import Logo from "~/components/Logo.vue";
 import ArticleList from "~/components/organisms/ArticleList";
 
@@ -69,31 +70,14 @@ export default {
     ArticleList,
     Logo
   },
-  data() {
-    return {
-      articles: [
-        {
-          id: "1",
-          attributes: {
-            slug: "handling-errors-rails",
-            title: "Handling Errors in ruby on Rails API applications",
-            category: "Web development",
-            excerpt:
-              "If you struggle with the correct way of handling errors \
-              in Rails Applications, this article is a solution for all \
-              your problems"
-          },
-          relationships: {
-            author: {
-              data: {
-                type: "users",
-                id: "1"
-              }
-            }
-          }
-        }
-      ]
-    };
+  computed: {
+    ...mapGetters("articles", ["articles"])
+  },
+  async fetch({ app, error }) {
+    if (app.store.getters["articles/pages"] > 0) {
+      return;
+    }
+    await app.store.dispatch("articles/getPage", { type: "first" });
   }
 };
 </script>

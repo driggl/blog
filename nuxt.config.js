@@ -31,7 +31,14 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/bulma'],
+  modules: [
+    '@nuxtjs/bulma',
+    '@nuxtjs/axios'
+  ],
+
+  axios: {
+    baseURL: 'https://api.driggl.com/v1/blogs/driggl'
+  },
   /*
    ** Build configuration
    */

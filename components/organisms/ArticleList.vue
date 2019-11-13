@@ -5,8 +5,9 @@
       :title="attributes.title"
       :content="attributes.excerpt"
       :category="attributes.category"
+      :imageUrl="attributes.thumbnail.small"
       :authorId="relationships.author.data.id"
-      v-for="{ id, attributes, relationships } in articles"
+      v-for="[id, { attributes, relationships }] in articles"
     />
   </div>
 </template>
@@ -20,8 +21,8 @@ export default {
   },
   props: {
     articles: {
-      type: Array,
-      default: []
+      type: Map,
+      required: true
     }
   }
 };
