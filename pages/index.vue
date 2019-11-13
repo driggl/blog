@@ -23,7 +23,7 @@
         <div class="navbar-start"></div>
 
         <div class="navbar-end">
-          <a class="navbar-item">
+          <a class="navbar-item" href="https://driggl.com/#courses">
             Courses
           </a>
 
