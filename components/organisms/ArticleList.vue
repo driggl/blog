@@ -4,6 +4,7 @@
       :key="id"
       :title="attributes.title"
       :content="attributes.excerpt"
+      :slug="attributes.slug"
       :category="'Web development'"
       :imageUrl="attributes.thumbnail.small"
       :authorId="relationships.author.data.id"
