@@ -94,7 +94,4 @@ export default {
 <style lang="sass">
 .header
   padding: 40px 0
-
-@import "bulma/sass/utilities/_all.sass"
-@import "~bulma"
 </style>
