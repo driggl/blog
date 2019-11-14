@@ -1,32 +1,34 @@
 <template>
   <div class="card">
-    <div class="columns">
-      <div class="column is-half">
-        <figure class="image">
-          <img :src="imageUrl" alt="Placeholder image" />
-        </figure>
-      </div>
-      <div class="card-content">
-        <h3 class="title is-5">{{ title }}</h3>
-        <div class="article-meta">
-          <span>Category: </span><strong>{{ category }}</strong>
-          <span>Author: </span><strong>{{ author }}</strong>
+    <nuxt-link :to="'/'">
+      <div class="columns">
+        <div class="column is-half">
+          <figure class="image">
+            <img :src="imageUrl" alt="Placeholder image" />
+          </figure>
         </div>
-        <div class="content">
-          <p>{{ content }}</p>
-        </div>
-        <div class="level">
-          <div class="level-left"></div>
-          <div class="level-right">
-            <div class="level-item">
-              <a href="/">
-                read more...
-              </a>
+        <div class="card-content">
+          <h3 class="title is-5">{{ title }}</h3>
+          <div class="article-meta">
+            <span>Category: </span><strong>{{ category }}</strong>
+            <span>Author: </span><strong>{{ author }}</strong>
+          </div>
+          <div class="content">
+            <p>{{ content }}</p>
+          </div>
+          <div class="level">
+            <div class="level-left"></div>
+            <div class="level-right">
+              <div class="level-item">
+                <a href="/" class="readmore">
+                  read more...
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </nuxt-link>
   </div>
 </template>
 
@@ -75,11 +77,32 @@ export default {
   align-items: flex-start;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-    0 0px 0 1px rgba(10, 10, 10, 0.02);
   margin-bottom: 20px;
 }
+
+.card a {
+  color: #444444;
+}
+.card .readmore {
+  color: #e89b4b;
+  text-decoration: underline;
+}
+
+.card:hover .readmore {
+  color: #bd6f2b;
+}
+
 .card-image {
   max-width: 50%;
+}
+
+.card {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0px 0 1px rgba(10, 10, 10, 0.02);
 }
 </style>
