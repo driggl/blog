@@ -18,7 +18,8 @@
     <div class="section main">
       <div class="container">
         <div class="columns">
-          <div class="column is-two-third-tablet">
+          <div class="column is-hidden-touch is-one-quarter-desktop" />
+          <div class="column is-two-third-tablet is-one-half-desktop">
             <div class="article-meta">
               <span>Category: </span><strong>Web development</strong>
               <span>Author: </span><strong>Sebastian Wilgosz</strong>
@@ -28,7 +29,7 @@
               v-html="selected.attributes.content"
             />
           </div>
-          <aside class="column is-one-third-tablet">
+          <aside class="column is-one-third-tablet is-one-quarter-desktop">
             <section class="header">
               <h2 class="title is-4">
                 Do you like this content?

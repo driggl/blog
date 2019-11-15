@@ -7,7 +7,7 @@
 <script>
 export default {
   props: {
-    url: { type: String, requierd: "true" },
+    url: { required: "true" },
     external: { type: Boolean, default: false }
   },
   computed: {

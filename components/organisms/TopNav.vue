@@ -24,6 +24,10 @@
       <div class="navbar-start"></div>
 
       <div class="navbar-end">
+        <navbar-item :url="{ name: 'blog' }">
+          Blog
+        </navbar-item>
+
         <navbar-item :url="'https://driggl.com/#courses'">
           Courses
         </navbar-item>

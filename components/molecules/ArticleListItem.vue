@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <nuxt-link :to="{ name: 'a-id', params: { id: slug } }">
+    <nuxt-link :to="{ name: 'blog-a-id', params: { id: slug } }">
       <div class="columns">
         <div class="column is-half">
           <figure class="image">
