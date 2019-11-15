@@ -5,11 +5,9 @@
       <div class="container main">
         <div class="columns">
           <div class="column is-two-third-tablet">
-            <section class="header">
-              <h2 class="title is-4">
-                Recently on Driggl
-              </h2>
-            </section>
+            <h2 class="title is-4">
+              Recently on Driggl
+            </h2>
 
             <article-list :articles="articles" />
           </div>
@@ -59,7 +57,3 @@ export default {
 };
 </script>
 
-<style lang="sass">
-.header
-  padding: 40px 0
-</style>
