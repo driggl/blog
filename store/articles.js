@@ -57,28 +57,6 @@ export const actions = {
     const { data } = await this.$axios.$get("/articles", {
       params: { page, per_page: state.perPage }
     })
-    // const data = [
-    //   {
-    //     id: "1",
-    //     attributes: {
-    //       slug: "handling-errors-rails",
-    //       title: "Handling Errors in ruby on Rails API applications",
-    //       category: "Web development",
-    //       excerpt:
-    //         "If you struggle with the correct way of handling errors \
-    //         in Rails Applications, this article is a solution for all \
-    //         your problems"
-    //     },
-    //     relationships: {
-    //       author: {
-    //         data: {
-    //           type: "users",
-    //           id: "1"
-    //         }
-    //       }
-    //     }
-    //   }
-    // ]
     // commit('users/SET_USERS', included.filter(({ type }) => type === 'user'), {
     //   root: true
     // })
@@ -93,28 +71,27 @@ export const actions = {
     return state.articles
   },
 
-  // async getArticle({ getters, commit, state, rootGetters }, selectedId) {
-  //   const article = getters.articles && getters.articles.get(selectedId)
+  async getArticle({ getters, commit, state }, selectedId) {
 
-  //   if (article) {
-  //     commit('SET', [article])
-  //     commit('SELECT', article)
-  //     return state.selected
-  //   }
+    // const { data, links } = await this.$repositories.articles.index({
+    //   page,
+    //   perPage: state.perPage,
+    // })
+    const article = Array.from(getters.articles).map((article) => article[1])
+      .find((article) => article.attributes.slug === selectedId)
 
-  //   const { data, included } = await this.$repositories.articles.show(
-  //     selectedId
-  //   )
-  //   commit('SELECT', data)
+    if (article) {
+      commit('SELECT', article)
+      return state.selected
+    }
+    const { data } = await this.$axios.$get(`/articles/${selectedId}`)
+    // commit('users/SET_USERS', included.filter(({ type }) => type === 'user'), {
+    //   root: true
+    // })
 
-  //   const category = included.find((resource) => resource.type === 'categories')
+    commit('SET', [data])
+    commit('SELECT', data)
 
-  //   if (category) {
-  //     commit('categories/SET', [category], {
-  //       root: true
-  //     })
-  //   }
-
-  //   return state.selected
-  // }
+    return state.selected
+  }
 }

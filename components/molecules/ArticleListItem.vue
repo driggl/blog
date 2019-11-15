@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <nuxt-link :to="'/'">
+    <nuxt-link :to="{ name: 'a-id', params: { id: slug } }">
       <div class="columns">
         <div class="column is-half">
           <figure class="image">
@@ -36,6 +36,10 @@
 export default {
   props: {
     authorId: {
+      type: String,
+      required: true
+    },
+    slug: {
       type: String,
       required: true
     },
