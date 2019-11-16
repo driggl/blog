@@ -28,7 +28,7 @@
           Blog
         </navbar-item>
 
-        <navbar-item :url="'https://driggl.com/#courses'">
+        <navbar-item :url="'/#courses'">
           Courses
         </navbar-item>
 

@@ -1,59 +1,125 @@
 <template>
   <div>
     <top-nav />
-    <div class="container">
-      <div class="container main">
-        <div class="columns">
-          <div class="column is-two-third-tablet is-three-quarters-desktop">
-            <h2 class="title is-4">
-              Recently on Driggl
-            </h2>
-
-            <article-list :articles="articles" />
-          </div>
-          <aside class="column is-one-third-tablet is-one-quarter-desktop">
-            <section class="header">
-              <h2 class="title is-4">
-                Do you like this content?
-              </h2>
-              <p>
-                <i
-                  >Join to our Newsletter for weekly updates about new articles
-                  and <strong>free programming tips!</strong></i
-                >
-              </p>
-              <email-subscription-form />
-            </section>
-          </aside>
+    <section
+      class="hero has-background-image"
+      :style="{
+        'background-image': 'url(' + require('~/assets/home-cover.jpg') + ')'
+      }"
+    >
+      <div class="hero-body has-mask">
+        <div class="container has-text-right">
+          <h1 class="title">
+            Wanna be a developer?
+          </h1>
+          <a
+            href="#courses"
+            class="button is-primary has-text-weight-bold is-large"
+          >
+            Check out our courses!
+          </a>
         </div>
       </div>
-    </div>
+    </section>
+    <section class="section hero">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h2 class="title">
+            Experienced & Trusted by
+            <strong><span class="has-text-orange">700+</span></strong> People
+            worldwide
+          </h2>
+          <a
+            href="https://www.udemy.com/ruby-on-rails-api-the-complete-guide/?couponCode=DGLWEB"
+            class="button is-primary has-text-weight-bold is-large"
+          >
+            Start learning now!
+          </a>
+        </div>
+      </div>
+    </section>
+    <section id="courses" class="section">
+      <div class="columns">
+        <div class="column is-one-half">
+          <img src="~assets/rails-rest-api.jpg" />
+        </div>
+        <div class="column is-one-half">
+          <div class="content">
+            <h2 class="title">Ruby On Rails REST API</h2>
+            <h3 class="subtitle is-5">The complete guide</h3>
+            <p class="is-size-3">
+              Create professional API applications that you can hook anything
+              into! Learn how to code like professionals using Test Driven
+              Development!
+            </p>
+          </div>
+          <a
+            href="https://www.udemy.com/ruby-on-rails-api-the-complete-guide/?couponCode=DGLWEB"
+            target="_blank"
+            class="button is-primary has-text-weight-bold is-large"
+          >
+            Take this course for 10$ >
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="hero section">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h2 class="title">
+            Not sure if it's for you?
+          </h2>
+          <h3 class="subtitle">
+            No worries, we offer
+            <strong><span class="has-text-orange">30-day</span></strong>
+            money-back!
+          </h3>
+          <a
+            href="https://www.udemy.com/ruby-on-rails-api-the-complete-guide/?couponCode=DGLWEB"
+            class="button is-primary has-text-weight-bold is-large"
+          >
+            Check it out!
+          </a>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-import ArticleList from "~/components/organisms/ArticleList";
-import EmailSubscriptionForm from "~/components/molecules/EmailSubscriptionForm";
 import Logo from "~/components/Logo.vue";
 import TopNav from "~/components/organisms/TopNav";
 
 export default {
   components: {
-    ArticleList,
-    EmailSubscriptionForm,
     Logo,
     TopNav
   },
-  computed: {
-    ...mapGetters("articles", ["articles"])
-  },
-  async fetch({ app, error }) {
-    if (app.store.getters["articles/pages"] > 0) {
-      return;
-    }
-    await app.store.dispatch("articles/getPage", { type: "first" });
+  data() {
+    return {
+      courseUrl:
+        "https://www.udemy.com/course/ruby-on-rails-api-the-complete-guide/learn/lecture/13319926?couponCode=DGLWEB#overview"
+    };
   }
 };
 </script>
 
+<style scoped lang='sass'>
+.has-background-image
+  background-size: cover
+  backgorund-position: center
+
+.has-mask
+  min-height: 600px
+  background-color: rgba(0,0,0,0.65)
+  display: flex
+
+  .container
+    display: flex
+    align-self: center
+    align-items: flex-end
+    flex-direction: column
+    .title
+      color: $white
+</style>
