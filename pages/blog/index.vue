@@ -39,6 +39,41 @@ import Logo from "~/components/Logo.vue";
 import TopNav from "~/components/organisms/TopNav";
 
 export default {
+  name: "Articles",
+  head: {
+    title: "Recent Articles",
+    titleTemplate: "%s | Driggl - Modern web development",
+    meta: [
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "Build modern websites like a professional with Driggl Community!",
+        titleTemplate: null
+      },
+      {
+        hid: "author",
+        name: "author",
+        content: "Driggl - https://driggl.com"
+      },
+      {
+        property: "og:title",
+        content: "Recent articles",
+        vmid: "og:title"
+      },
+      {
+        property: "og:description",
+        content:
+          "Newest content from web Professionals and the Modern web development Community!",
+        vmid: "og:description"
+      },
+      {
+        property: "og:image",
+        content: require("~/assets/home-cover.jpg"),
+        vmid: "og:image"
+      }
+    ]
+  },
   components: {
     ArticleList,
     EmailSubscriptionForm,
@@ -56,4 +91,3 @@ export default {
   }
 };
 </script>
-
