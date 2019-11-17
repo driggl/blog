@@ -65,6 +65,26 @@ export default {
     extend(config, ctx) {}
   },
   generate: {
-    dir: 'public'
+    dir: 'public',
+    routes: [
+      "/blog",
+      "/blog/a/from-activemodel-serializers-to-fast-jsonapi",
+      "/blog/a/how-to-write-professional-commits-efficiently",
+      "/blog/a/json-api-errors-handler",
+      "/blog/a/how-much-your-time-is-worth",
+      "/blog/a/adding-links-to-fast_jsonapi-serializer",
+      "/blog/a/token-based-authorization",
+      "/blog/a/delayed-jobs-with-sidekiq",
+      "/blog/a/handling-exceptions-in-rails-applications",
+      "/blog/a/should-you-start-using-vim",
+      "/blog/a/how-squashing-commits-can-improve-your-git-workflow",
+      "/blog/a/process-manager-vs-saga-confusion",
+      "/blog/a/rework-review",
+      "/blog/a/using-double-object-in-automatic-tests",
+      "/blog/a/code-highlighting-with-rouge",
+      "/blog/a/productivity-boost-with-postman",
+      "/blog/a/git-hooks-commit-msg",
+      "/blog/a/how-to-learn-web-development"
+    ]
   }
 };
