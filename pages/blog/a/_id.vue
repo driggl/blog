@@ -29,12 +29,12 @@
               v-html="selected.attributes.content"
             />
             <div class="comments">
-              <vue-disqus
+              <!-- <vue-disqus
                 shortname="driggl"
                 :identifier="'article-' + selected.id"
                 :url="'https://driggl.com/blog/a/' + selected.slug"
                 :title="selected.title"
-              />
+              /> -->
             </div>
           </div>
           <aside class="column is-one-third-tablet is-one-quarter-desktop">
