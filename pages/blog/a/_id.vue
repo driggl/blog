@@ -29,12 +29,12 @@
               v-html="selected.attributes.content"
             />
             <div class="comments">
-              <vue-disqus
+              <!-- <vue-disqus
                 shortname="driggl"
                 :identifier="'article-' + selected.id"
                 :url="'https://driggl.com/blog/a/' + selected.slug"
                 :title="selected.title"
-              />
+              /> -->
             </div>
           </div>
           <aside class="column is-one-third-tablet is-one-quarter-desktop">
@@ -64,6 +64,36 @@ import TopNav from "~/components/organisms/TopNav";
 import EmailSubscriptionForm from "~/components/molecules/EmailSubscriptionForm";
 
 export default {
+  name: "SingleArticle",
+  head() {
+    return {
+      title: this.selected.attributes.title,
+      // titleTemplate: " %s | Driggl - Modern web development",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.selected.attributes.excerpt
+        },
+        {
+          property: "og:title",
+          content: this.selected.attributes.title
+        },
+        {
+          property: "og:description",
+          content: this.selected.attributes.excerpt
+        },
+        {
+          property: "og:image",
+          content: this.selected.attributes.thumbnail.full
+        },
+        {
+          name: "author",
+          content: "Sebastian Wilgosz"
+        }
+      ]
+    };
+  },
   components: {
     EmailSubscriptionForm,
     TopNav

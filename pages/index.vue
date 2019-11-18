@@ -92,6 +92,40 @@ import Logo from "~/components/Logo.vue";
 import TopNav from "~/components/organisms/TopNav";
 
 export default {
+  name: "Articles",
+  head: {
+    title: "Driggl - Modern web development",
+    titleTemplate: null,
+    meta: [
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "Build modern websites like a professional with Driggl Community!"
+      },
+      {
+        hid: "author",
+        name: "author",
+        content: "Driggl - https://driggl.com"
+      },
+      {
+        property: "og:title",
+        content: "Driggl - Modern web development",
+        vmid: "og:title"
+      },
+      {
+        property: "og:description",
+        content:
+          "Build modern websites like a professional with Driggl Community!",
+        vmid: "og:description"
+      },
+      {
+        property: "og:image",
+        content: require("~/assets/home-cover.jpg"),
+        vmid: "og:image"
+      }
+    ]
+  },
   components: {
     Logo,
     TopNav
