@@ -96,6 +96,10 @@ export default {
           content: "article"
         },
         {
+          property: "fb:app_id",
+          content: process.env.FB_APP_ID
+        },
+        {
           property: "article:author",
           content: "https://www.facebook.com/sebastian.wilgosz"
         },
