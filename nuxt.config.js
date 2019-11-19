@@ -17,6 +17,14 @@ export default {
           hid: 'description',
           name: 'description',
           content: 'Build modern websites like a professional with Driggl Community!'
+        },
+        {
+          property: "fb:app_id",
+          value: process.env.FB_APP_ID
+        },
+        {
+          property: "og:type",
+          content: "website"
         }
       ],
       link: [

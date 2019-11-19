@@ -88,6 +88,26 @@ export default {
           content: this.selected.attributes.thumbnail.full
         },
         {
+          property: "og:url",
+          content: "https://driggl.com" + this.$route.path
+        },
+        {
+          property: "og:type",
+          content: "article"
+        },
+        {
+          property: "article:author",
+          content: "https://www.facebook.com/sebastian.wilgosz"
+        },
+        {
+          property: "article:publisher",
+          content: "https://www.facebook.com/driggl"
+        },
+        {
+          property: "og:site_name",
+          content: "Driggl - Modern Web Development"
+        },
+        {
           name: "author",
           content: "Sebastian Wilgosz"
         }
