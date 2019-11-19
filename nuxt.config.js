@@ -7,18 +7,26 @@ export default {
   /*
    ** Headers of the page
    */
-  head: {
-    title: 'Driggl - Modern web development',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Build modern websites like a professional with Driggl Community!'
-      }
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+  head() {
+    return {
+      title: 'Driggl - Modern web development',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Build modern websites like a professional with Driggl Community!'
+        }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        {
+          rel: "canonical",
+          href: "https://driggl.com" + this.$route.path
+        }
+      ]
+    }
   },
   /*
    ** Customize the progress-bar color
