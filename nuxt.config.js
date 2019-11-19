@@ -21,10 +21,6 @@ export default {
         {
           property: "fb:app_id",
           value: process.env.FB_APP_ID
-        },
-        {
-          property: "og:type",
-          content: "website"
         }
       ],
       link: [

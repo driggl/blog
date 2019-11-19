@@ -109,6 +109,10 @@ export default {
         content: "Driggl - https://driggl.com"
       },
       {
+        property: "og:type",
+        content: "website"
+      },
+      {
         property: "og:title",
         content: "Driggl - Modern web development",
         vmid: "og:title"

@@ -67,6 +67,10 @@ export default {
         property: "og:image",
         content: require("~/assets/home-cover.jpg"),
         vmid: "og:image"
+      },
+      {
+        property: "og:type",
+        content: "website"
       }
     ]
   },

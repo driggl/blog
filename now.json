@@ -15,5 +15,15 @@
         "Location": "https://driggl.com"
       }
     }
-  ]
+  ],
+  "env": {
+    "FB_APP_ID": "@fb_app_id",
+    "GA_UA": "@ga_ua"
+  },
+  "build": {
+    "env": {
+      "FB_APP_ID": "@fb_app_id",
+      "GA_UA": "@ga_ua"
+    }
+  }
 }
