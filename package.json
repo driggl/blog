@@ -1,8 +1,8 @@
 {
   "name": "nuxtjs",
   "version": "1.0.0",
-  "description": "My astonishing Nuxt.js project",
-  "author": "msweeneydev",
+  "description": "Driggl - Blog for modern web developers",
+  "author": "driggl",
   "private": true,
   "engines": {
     "node": "10.x"
