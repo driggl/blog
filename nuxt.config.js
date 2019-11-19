@@ -108,5 +108,9 @@ export default {
       "/blog/a/git-hooks-commit-msg",
       "/blog/a/how-to-learn-web-development"
     ]
+  },
+  env: {
+    GA_UA: process.env.GA_UA,
+    FB_APP_ID: process.env.FB_APP_ID
   }
 };
