@@ -5,13 +5,9 @@
       <div class="container main">
         <div class="columns">
           <div class="column is-two-third-tablet is-three-quarters-desktop">
-            <h2 class="title is-4">
-              Recently on Driggl
-            </h2>
-
             <article-list :articles="articles" />
           </div>
-          <aside class="column is-one-third-tablet is-one-quarter-desktop">
+          <div class="column is-one-third-tablet is-one-quarter-desktop">
             <section class="header">
               <h2 class="title is-4">
                 Do you like this content?
@@ -24,7 +20,7 @@
               </p>
               <email-subscription-form />
             </section>
-          </aside>
+          </div>
         </div>
       </div>
     </div>

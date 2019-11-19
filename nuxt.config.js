@@ -1,4 +1,8 @@
+// process.env.DEBUG = 'nuxt:*'
+
 export default {
+  // debug: true,
+  buildDir: 'public',
   mode: 'universal',
   /*
    ** Headers of the page
@@ -45,9 +49,15 @@ export default {
     '@nuxtjs/style-resources'
   ],
 
+  buildModules: [
+    ['@nuxtjs/google-analytics', {
+      id: process.env.GA_UA
+    }]
+  ],
   axios: {
-    baseURL: 'https://api.driggl.com/v1/blogs/driggl'
+    baseURL: 'https://api.driggl.com/api/v1/blogs/driggl'
   },
+
   /*
    ** Build configuration
    */
@@ -61,9 +71,9 @@ export default {
           customProperties: false
         }
       }
-    },
-    extend(config, ctx) {}
+    }
   },
+
   generate: {
     dir: 'public',
     routes: [

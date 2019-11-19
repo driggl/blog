@@ -54,9 +54,7 @@ export const actions = {
     //   perPage: state.perPage,
     // })
 
-    const { data } = await this.$axios.$get("/articles", {
-      params: { page, per_page: state.perPage }
-    })
+    const { data } = await this.$axios.$get("/articles")
     // commit('users/SET_USERS', included.filter(({ type }) => type === 'user'), {
     //   root: true
     // })
