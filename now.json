@@ -17,13 +17,13 @@
     }
   ],
   "env": {
-    "FB_APP_ID": "@fb_app_id",
-    "GA_UA": "@ga_ua"
+    "FB_APP_ID": "@fb-app-id",
+    "GA_UA": "@ga-ua"
   },
   "build": {
     "env": {
-      "FB_APP_ID": "@fb_app_id",
-      "GA_UA": "@ga_ua"
+      "FB_APP_ID": "@fb-app-id",
+      "GA_UA": "@ga-ua"
     }
   }
 }
