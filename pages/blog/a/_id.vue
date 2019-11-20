@@ -39,15 +39,6 @@
           </div>
           <aside class="column is-one-third-tablet is-one-quarter-desktop">
             <section class="header">
-              <h2 class="title is-4">
-                Do you like this content?
-              </h2>
-              <p>
-                <i
-                  >Join to our Newsletter for weekly updates about new articles
-                  and <strong>free programming tips!</strong></i
-                >
-              </p>
               <email-subscription-form />
             </section>
           </aside>
