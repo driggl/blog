@@ -28,6 +28,11 @@
               @input="setEmail($event)"
             />
             <p v-html="error" v-if="error" class="help is-danger"></p>
+            <p
+              v-html="successMessage"
+              v-if="success"
+              class="help is-success"
+            ></p>
           </div>
 
           <button class="button is-primary is-fullwidth" type="submit">
@@ -61,14 +66,18 @@ export default {
   data() {
     return {
       email: "",
-      error: ""
+      error: "",
+      successMessage: ""
     };
   },
   methods: {
     onError(error) {
       this.error = error;
     },
-    onSuccess() {}
+    onSuccess() {
+      this.successMessage =
+        "Thank you! Check out your mailbox to confirm subscription!";
+    }
   }
 };
 </script>
