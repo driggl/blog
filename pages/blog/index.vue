@@ -5,19 +5,27 @@
       <div class="container main">
         <div class="columns">
           <div class="column is-two-third-tablet is-three-quarters-desktop">
-            <article-list :articles="articles" />
+            <article-list :class="'section'" :articles="articles" />
+            <no-ssr>
+              <InfiniteLoading
+                spinner="bubbles"
+                :distance="20"
+                @infinite="onNextPage"
+              >
+                <template #spinner>
+                  <DglLoader />
+                </template>
+                <template #no-results>
+                  <email-subscription-form
+                    :showLabel="false"
+                    :placeholder="'Email'"
+                  />
+                </template>
+              </InfiniteLoading>
+            </no-ssr>
           </div>
           <div class="column is-one-third-tablet is-one-quarter-desktop">
-            <section class="header">
-              <h2 class="title is-4">
-                Do you like this content?
-              </h2>
-              <p>
-                <i
-                  >Join to our Newsletter for weekly updates about new articles
-                  and <strong>free programming tips!</strong></i
-                >
-              </p>
+            <section class="section">
               <email-subscription-form />
             </section>
           </div>
@@ -31,11 +39,21 @@
 import { mapGetters } from "vuex";
 import ArticleList from "~/components/organisms/ArticleList";
 import EmailSubscriptionForm from "~/components/molecules/EmailSubscriptionForm";
+import InfiniteLoading from "vue-infinite-loading";
+import DglLoader from "~/components/atoms/DglLoader.vue";
 import Logo from "~/components/Logo.vue";
 import TopNav from "~/components/organisms/TopNav";
 
 export default {
   name: "Articles",
+  components: {
+    ArticleList,
+    DglLoader,
+    EmailSubscriptionForm,
+    InfiniteLoading,
+    Logo,
+    TopNav
+  },
   head: {
     title: "Recent Articles",
     titleTemplate: "%s | Driggl - Modern web development",
@@ -74,20 +92,29 @@ export default {
       }
     ]
   },
-  components: {
-    ArticleList,
-    EmailSubscriptionForm,
-    Logo,
-    TopNav
-  },
   computed: {
-    ...mapGetters("articles", ["articles"])
+    ...mapGetters("articles", ["articles", "allLoaded"])
   },
   async fetch({ app, error }) {
     if (app.store.getters["articles/pages"] > 0) {
       return;
     }
     await app.store.dispatch("articles/getPage", { type: "first" });
+  },
+  methods: {
+    async onNextPage($state) {
+      await this.getNextPage();
+
+      if (this.allLoaded) {
+        $state.complete();
+        console.log(this.articles);
+      } else {
+        $state.loaded();
+      }
+    },
+    getNextPage(type) {
+      return this.$store.dispatch("articles/getPage", { type: "next" });
+    }
   }
 };
 </script>
