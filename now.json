@@ -16,6 +16,9 @@
       }
     }
   ],
+  "github": {
+    "silent": true
+  },
   "env": {
     "FB_APP_ID": "@fb-app-id",
     "GA_UA": "@ga-ua"
