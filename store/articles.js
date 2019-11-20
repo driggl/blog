@@ -8,9 +8,11 @@ export const state = () => ({
 
 export const mutations = {
   SET(state, payload) {
+    const articles = new Map(state.articles)
     payload.forEach((article) => {
-      state.articles.set(article.id, article)
+      articles.set(article.id, article)
     })
+    state.articles = articles
   },
   ADD_INCLUDED_USERS(state, users) {
     state.includedUsers.push(...users)
@@ -36,12 +38,14 @@ export const getters = {
 export const actions = {
   async getPage(
     { getters, commit, state },
-    { type, blogId } = { type: 'first', blogId: null }
+    { type } = { type: 'first' }
   ) {
-    let page
-    if (blogId != null) {
-      type = 'first'
+
+    if (state.allLoaded) {
+      return state.articles
     }
+
+    let page
 
     if (type === 'first') {
       page = 1
@@ -54,17 +58,17 @@ export const actions = {
     //   perPage: state.perPage,
     // })
 
-    const { data } = await this.$axios.$get("/articles")
+    const { data, links } = await this.$axios.$get("/articles", { params: { page: page } })
     // commit('users/SET_USERS', included.filter(({ type }) => type === 'user'), {
     //   root: true
     // })
 
-    // if (!links.next) {
-    //   commit('LOAD_ALL', true)
-    // }
+    if (!links.next) {
+      commit('LOAD_ALL', true)
+    }
 
     commit('SET', data)
-    // commit('INCREASE_PAGES')
+    commit('INCREASE_PAGES')
 
     return state.articles
   },
