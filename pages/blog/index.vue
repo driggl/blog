@@ -107,7 +107,6 @@ export default {
 
       if (this.allLoaded) {
         $state.complete();
-        console.log(this.articles);
       } else {
         $state.loaded();
       }
