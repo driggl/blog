@@ -71,7 +71,7 @@ export default {
   },
   proxy: {
     '/api/': {
-      target: process.env.API_URL,
+      target: process.env.API_URL || 'https://api.sourcerio.com/v1/blogs/driggl',
       pathRewrite: { '^/api': '' }
     }
   },
