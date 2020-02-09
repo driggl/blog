@@ -67,14 +67,15 @@ export default {
     }]
   ],
   axios: {
-    proxy: true
+    // proxy: true
+    baseURL: 'https://api.sourcerio.com/v1/blogs/driggl'
   },
-  proxy: {
-    '/api/': {
-      target: process.env.API_URL || 'https://api.sourcerio.com/v1/blogs/driggl',
-      pathRewrite: { '^/api': '' }
-    }
-  },
+  // proxy: {
+  //   '/api/': {
+  //     target: process.env.API_URL || '',
+  //     pathRewrite: { '^/api': '' }
+  //   }
+  // },
 
   /*
    ** Build configuration

@@ -57,7 +57,7 @@ export const actions = {
     //   page,
     //   perPage: state.perPage,
     // })
-    const { data, links } = await this.$axios.$get("/api/articles", { params: { "page[number]": page } })
+    const { data, links } = await this.$axios.$get("/articles", { params: { "page[number]": page } })
     // commit('users/SET_USERS', included.filter(({ type }) => type === 'user'), {
     //   root: true
     // })
@@ -85,7 +85,7 @@ export const actions = {
       commit('SELECT', article)
       return state.selected
     }
-    const { data } = await this.$axios.$get(`/api/articles/${selectedId}`)
+    const { data } = await this.$axios.$get(`/articles/${selectedId}`)
     // commit('users/SET_USERS', included.filter(({ type }) => type === 'user'), {
     //   root: true
     // })
