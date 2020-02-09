@@ -67,7 +67,8 @@ export default {
     }]
   ],
   axios: {
-    baseURL: 'https://api.sourcerio.com/v1/blogs/driggl'
+    baseURL: 'https://api.sourcerio.com/v1/blogs/driggl',
+    browserBaseURL: 'https://api.sourcerio.com/v1/blogs/driggl'
   },
 
   /*
