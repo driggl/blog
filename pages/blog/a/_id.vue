@@ -76,7 +76,9 @@ export default {
         },
         {
           property: "og:image",
-          content: this.selected.attributes.thumbnail.full
+          content:
+            this.selected.attributes.thumbnail.original ||
+            this.selected.attributes.thumbnail.full
         },
         {
           property: "og:url",
