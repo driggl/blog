@@ -76,15 +76,15 @@ export default {
         },
         {
           property: "og:image",
-          content: this.selected.attributes.thumbnail.full
+          content: this.selected.attributes.thumbnail.sharing
         },
         {
           property: "og:image:width",
-          content: 1920
+          content: 1200
         },
         {
           property: "og:image:height",
-          content: 600
+          content: 630
         },
         {
           property: "og:url",
