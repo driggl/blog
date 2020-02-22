@@ -6,7 +6,7 @@
         <div class="columns">
           <div class="column is-two-third-tablet is-three-quarters-desktop">
             <article-list :class="'section'" :articles="articles" />
-            <no-ssr>
+            <client-only>
               <InfiniteLoading
                 spinner="bubbles"
                 :distance="20"
@@ -22,7 +22,7 @@
                   />
                 </template>
               </InfiniteLoading>
-            </no-ssr>
+            </client-only>
           </div>
           <div class="column is-one-third-tablet is-one-quarter-desktop">
             <section class="section">
