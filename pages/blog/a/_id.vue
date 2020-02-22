@@ -62,6 +62,30 @@ export default {
       // titleTemplate: " %s | Driggl - Modern web development",
       meta: [
         {
+          name: "twitter:site",
+          content: "@drigglweb"
+        },
+        {
+          name: "twitter:card",
+          content: "summary_large_image"
+        },
+        {
+          name: "twitter:creator",
+          content: "@sebwilgosz"
+        },
+        {
+          name: "twitter:title",
+          content: this.selected.attributes.title
+        },
+        {
+          name: "twitter:description",
+          content: this.selected.attributes.excerpt
+        },
+        {
+          name: "twitter:image",
+          content: this.selected.attributes.thumbnail.sharing
+        },
+        {
           hid: "description",
           name: "description",
           content: this.selected.attributes.excerpt
