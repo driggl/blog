@@ -3,10 +3,11 @@
     <top-nav />
     <section
       class="hero has-background-image"
-      :style="{
-        'background-image': 'url(' + require('~/assets/home-cover.jpg') + ')'
-      }"
+      style="background-image: url('/home-cover.jpg')"
     >
+      <div class="cover social" style="display: none">
+        <img src="/home-cover.jpg" />
+      </div>
       <div class="hero-body has-mask">
         <div class="container has-text-right">
           <h1 class="title">
@@ -125,7 +126,7 @@ export default {
       },
       {
         property: "og:image",
-        content: require("~/assets/home-cover.jpg"),
+        content: "/home-cover.jpg",
         vmid: "og:image"
       }
     ]

@@ -4,6 +4,9 @@
     <div class="container">
       <div class="container main">
         <div class="columns">
+          <div class="cover social" style="display: none">
+            <img src="/home-cover.jpg" />
+          </div>
           <div class="column is-two-third-tablet is-three-quarters-desktop">
             <article-list :class="'section'" :articles="articles" />
             <client-only>
@@ -83,7 +86,7 @@ export default {
       },
       {
         property: "og:image",
-        content: require("~/assets/home-cover.jpg"),
+        content: "/home-cover.jpg",
         vmid: "og:image"
       },
       {
