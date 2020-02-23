@@ -65,7 +65,7 @@ export default {
         hid: "description",
         name: "description",
         content:
-          "Build modern websites like a professional with Driggl Community!",
+          "Build modern websites like a professional with Driggl's Community!",
         titleTemplate: null
       },
       {
