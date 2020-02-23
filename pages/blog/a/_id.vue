@@ -8,7 +8,7 @@
       }"
     >
       <div class="cover social" style="display: none">
-        <img :src="selected.attributes.thumbnail.sharing" />
+        <img :src="selected.attributes.thumbnail['sharing-square']" />
       </div>
       <div class="hero-body">
         <div class="container has-text-centered">
