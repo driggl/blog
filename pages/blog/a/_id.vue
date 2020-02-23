@@ -7,6 +7,9 @@
         'background-image': 'url(' + selected.attributes.thumbnail.full + ')'
       }"
     >
+      <div class="cover social" style="display: none">
+        <img :src="selected.attributes.thumbnail.sharing" />
+      </div>
       <div class="hero-body">
         <div class="container has-text-centered">
           <h1 class="title">
@@ -172,7 +175,7 @@ export default {
     justify-content: center
     .title, .subtitle
       color: $white
+
 .hero-body
   background-color: rgba(0,0,0,0.75)
-
 </style>
