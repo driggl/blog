@@ -87,7 +87,7 @@ export default {
         },
         {
           name: "twitter:image",
-          content: this.selected.attributes.thumbnail.sharing
+          content: "/sharing.png"
         },
         {
           hid: "description",
@@ -104,7 +104,7 @@ export default {
         },
         {
           property: "og:image",
-          content: this.selected.attributes.thumbnail.sharing
+          content: "/sharing.png"
         },
         {
           property: "og:image:width",
