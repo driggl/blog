@@ -7,9 +7,9 @@
         'background-image': 'url(' + selected.attributes.thumbnail.full + ')'
       }"
     >
-      <div class="cover social">
+      <!-- <div class="cover social">
         <img :src="selected.attributes.thumbnail['sharing-square']" />
-      </div>
+      </div> -->
       <div class="hero-body">
         <div class="container has-text-centered">
           <h1 class="title">
