@@ -72,7 +72,7 @@ export default {
   },
   proxy: {
     '/api/': {
-      target: 'https://api.sourcerio.com/v1/blogs/driggl', //process.env.API_URL || '',
+      target: 'https://sourcerio.com/api/v1/blogs/driggl', //process.env.API_URL || '',
       pathRewrite: { '^/api': '' }
     },
     '/images/': {
