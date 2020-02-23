@@ -113,10 +113,10 @@ export default {
           property: "og:image:height",
           content: 630
         },
-        {
-          property: "og:url",
-          content: "https://driggl.com" + this.$route.path
-        },
+        // {
+        //   property: "og:url",
+        //   content: "https://driggl.com" + this.$route.path
+        // },
         {
           property: "og:type",
           content: "article"
