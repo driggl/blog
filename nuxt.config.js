@@ -67,15 +67,19 @@ export default {
     }]
   ],
   axios: {
-    // proxy: true
-    baseURL: 'https://api.sourcerio.com/v1/blogs/driggl'
+    proxy: true
+    // baseURL:
   },
-  // proxy: {
-  //   '/api/': {
-  //     target: process.env.API_URL || '',
-  //     pathRewrite: { '^/api': '' }
-  //   }
-  // },
+  proxy: {
+    '/api/': {
+      target: 'https://api.sourcerio.com/v1/blogs/driggl', //process.env.API_URL || '',
+      pathRewrite: { '^/api': '' }
+    },
+    '/images/': {
+      target: 'https://driggl-prod.s3.eu-central-1.amazonaws.com/', //process.env.API_URL || '',
+      pathRewrite: { '^/images': '' }
+    }
+  },
 
   /*
    ** Build configuration

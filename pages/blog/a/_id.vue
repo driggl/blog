@@ -4,12 +4,26 @@
     <section
       class="hero"
       :style="{
-        'background-image': 'url(' + selected.attributes.thumbnail.full + ')'
+        'background-image':
+          'url(' +
+          selected.attributes.thumbnail.full.replace(
+            'https://driggl-prod.s3.eu-central-1.amazonaws.com',
+            '/images'
+          ) +
+          ')'
       }"
     >
       <div class="cover social">
+        <!-- https://driggl-prod.s3.eu-central-1.amazonaws.com/suggester/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/uploads/aaf94b67-6abb-40ef-9faa-11e67bd66a65/sharing.png -->
         <!-- <img :src="selected.attributes.thumbnail['sharing-square']" /> -->
-        <img src="/sharing.png" />
+        <img
+          :src="
+            selected.attributes.thumbnail.sharing.replace(
+              'https://driggl-prod.s3.eu-central-1.amazonaws.com',
+              '/images'
+            )
+          "
+        />
       </div>
       <div class="hero-body">
         <div class="container has-text-centered">
@@ -87,7 +101,10 @@ export default {
         },
         {
           name: "twitter:image",
-          content: this.selected.attributes.thumbnail.sharing
+          content: this.selected.attributes.thumbnail.sharing.replace(
+            "https://driggl-prod.s3.eu-central-1.amazonaws.com",
+            "/images"
+          )
         },
         {
           hid: "description",
@@ -104,7 +121,10 @@ export default {
         },
         {
           property: "og:image",
-          content: this.selected.attributes.thumbnail.sharing
+          content: this.selected.attributes.thumbnail.sharing.replace(
+            "https://driggl-prod.s3.eu-central-1.amazonaws.com",
+            "/images"
+          )
         },
         {
           property: "og:image:width",
