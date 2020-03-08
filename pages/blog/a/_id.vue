@@ -52,8 +52,6 @@
 import { mapGetters } from "vuex";
 import TopNav from "~/components/organisms/TopNav";
 
-import EmailSubscriptionForm from "~/components/molecules/EmailSubscriptionForm";
-
 export default {
   name: "SingleArticle",
   head() {
@@ -142,7 +140,6 @@ export default {
     };
   },
   components: {
-    EmailSubscriptionForm,
     TopNav
   },
   computed: {

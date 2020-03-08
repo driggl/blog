@@ -64,7 +64,9 @@ export default {
   buildModules: [
     ['@nuxtjs/google-analytics', {
       id: process.env.GA_UA
-    }]
+    }],
+    // With options
+    ['@nuxtjs/global-components', { /* module options */ }]
   ],
   axios: {
     // proxy: true

@@ -41,7 +41,6 @@
 <script>
 import { mapGetters } from "vuex";
 import ArticleList from "~/components/organisms/ArticleList";
-import EmailSubscriptionForm from "~/components/molecules/EmailSubscriptionForm";
 import InfiniteLoading from "vue-infinite-loading";
 import DglLoader from "~/components/atoms/DglLoader.vue";
 import Logo from "~/components/Logo.vue";
@@ -52,7 +51,6 @@ export default {
   components: {
     ArticleList,
     DglLoader,
-    EmailSubscriptionForm,
     InfiniteLoading,
     Logo,
     TopNav
