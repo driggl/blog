@@ -83,9 +83,13 @@ export default {
    ** Build configuration
    */
   build: {
+
     /*
      ** You can extend webpack config here
      */
+    extend(config, ctx) {
+      config.resolve.alias['vue'] = 'vue/dist/vue.common'
+    },
     postcss: {
       preset: {
         features: {

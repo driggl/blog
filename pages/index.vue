@@ -40,29 +40,7 @@
       </div>
     </section>
     <section id="courses" class="section">
-      <div class="columns">
-        <div class="column is-one-half">
-          <img src="~assets/rails-rest-api.jpg" />
-        </div>
-        <div class="column is-one-half">
-          <div class="content">
-            <h2 class="title">Ruby On Rails REST API</h2>
-            <h3 class="subtitle is-5">The complete guide</h3>
-            <p class="is-size-3">
-              Create professional API applications that you can hook anything
-              into! Learn how to code like professionals using Test Driven
-              Development!
-            </p>
-          </div>
-          <a
-            href="https://www.udemy.com/ruby-on-rails-api-the-complete-guide/?couponCode=DGLWEB"
-            target="_blank"
-            class="button is-primary has-text-weight-bold is-large"
-          >
-            Take this course for 10$ >
-          </a>
-        </div>
-      </div>
+      <CourseAd />
     </section>
     <section class="hero section">
       <div class="hero-body">
