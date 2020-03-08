@@ -111,7 +111,7 @@ export default {
     ]
   },
   components: {
-    CourseAd
+    CourseAd,
     Logo,
     TopNav
   },
