@@ -48,6 +48,7 @@
 <script>
 import { mapGetters } from "vuex";
 import TopNav from "~/components/organisms/TopNav";
+import CourseAd from "~/components/organisms/ads/CourseAd";
 
 export default {
   name: "SingleArticle",
