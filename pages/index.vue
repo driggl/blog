@@ -69,6 +69,7 @@
 import { mapGetters } from "vuex";
 import Logo from "~/components/Logo.vue";
 import TopNav from "~/components/organisms/TopNav";
+import CourseAd from "~/components/organisms/ads/CourseAd";
 
 export default {
   name: "Articles",
@@ -110,6 +111,7 @@ export default {
     ]
   },
   components: {
+    CourseAd
     Logo,
     TopNav
   },
