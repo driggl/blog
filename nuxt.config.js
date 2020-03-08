@@ -64,7 +64,9 @@ export default {
   buildModules: [
     ['@nuxtjs/google-analytics', {
       id: process.env.GA_UA
-    }]
+    }],
+    // With options
+    ['@nuxtjs/global-components', { /* module options */ }]
   ],
   axios: {
     // proxy: true
@@ -81,9 +83,13 @@ export default {
    ** Build configuration
    */
   build: {
+
     /*
      ** You can extend webpack config here
      */
+    extend(config, ctx) {
+      config.resolve.alias['vue'] = 'vue/dist/vue.common'
+    },
     postcss: {
       preset: {
         features: {

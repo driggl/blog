@@ -24,10 +24,7 @@
               <span>Category: </span><strong>Web development</strong>
               <span>Author: </span><strong>Sebastian Wilgosz</strong>
             </div>
-            <div
-              class="content is-spaced"
-              v-html="selected.attributes.content"
-            />
+            <component :is="processedHtml" />
             <div class="comments">
               <vue-disqus
                 shortname="driggl"
@@ -51,8 +48,7 @@
 <script>
 import { mapGetters } from "vuex";
 import TopNav from "~/components/organisms/TopNav";
-
-import EmailSubscriptionForm from "~/components/molecules/EmailSubscriptionForm";
+import CourseAd from "~/components/organisms/ads/CourseAd";
 
 export default {
   name: "SingleArticle",
@@ -141,12 +137,45 @@ export default {
       ]
     };
   },
+  data() {
+    return { size: "small" };
+  },
   components: {
-    EmailSubscriptionForm,
     TopNav
   },
   computed: {
-    ...mapGetters("articles", ["selected"])
+    ...mapGetters("articles", ["selected"]),
+    processedHtml() {
+      let html = this.selected.attributes.content
+        .replace(
+          "<p>[[EmailSubscriptionForm]]</p>",
+          "<EmailSubscriptionForm />"
+        )
+        .replace(
+          "<p>[[CourseAdAPI]]</p>",
+          '<CourseAd :size="size" :bg="adBgColor" />'
+        );
+      return {
+        components: {
+          CourseAd
+        },
+        template: "<div class='content is-spaced'>" + html + "</div>",
+        props: {
+          size: {
+            type: String,
+            default: () => {
+              return "small";
+            }
+          },
+          adBgColor: {
+            type: String,
+            default: () => {
+              return "#efefef";
+            }
+          }
+        }
+      };
+    }
   },
   async fetch({ app, route }) {
     await app.store.dispatch("articles/getArticle", route.params.id);
