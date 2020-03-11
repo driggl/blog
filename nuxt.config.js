@@ -58,7 +58,13 @@ export default {
    */
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    ['nuxt-facebook-pixel-module', {
+      /* module options */
+      track: 'PageView',
+      pixelId: process.env.FB_PIXEL_ID,
+      disabled: false
+    }],
   ],
 
   buildModules: [
