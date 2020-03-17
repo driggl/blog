@@ -49,6 +49,7 @@
 import { mapGetters } from "vuex";
 import TopNav from "~/components/organisms/TopNav";
 import CourseAd from "~/components/organisms/ads/CourseAd";
+import CodeSnippet from "~/components/organisms/CodeSnippet";
 
 export default {
   name: "SingleArticle",
@@ -145,10 +146,24 @@ export default {
   },
   computed: {
     ...mapGetters("articles", ["selected"]),
+    html() {
+      return this.selected.attributes.content;
+    },
     processedHtml() {
-      let html = this.selected.attributes.content
-        .replace("{{", "<span>{<span>{")
-        .replace("}}", "</span>}</span>}")
+      let html = this.html;
+      let preContents = this.selected.attributes.content.match(
+        /<pre[^>]*>.*?<\/pre>/gims
+      );
+
+      preContents.forEach((preContent, index) => {
+        html = html.replace(
+          preContent,
+          `<CodeSnippet :index="${index}" :text="html"/>`
+        );
+      });
+      html
+        .replace(/\{\{/gims, "<span>{</span><span>{</span>")
+        .replace(/\{\{/gims, "<span>}</span><span>}</span>")
         .replace(
           "<p>[[EmailSubscriptionForm]]</p>",
           "<EmailSubscriptionForm />"
@@ -159,10 +174,17 @@ export default {
         );
       return {
         components: {
-          CourseAd
+          CourseAd,
+          CodeSnippet
         },
         template: "<div class='content is-spaced'>" + html + "</div>",
         props: {
+          html: {
+            type: String,
+            default: () => {
+              return this.html;
+            }
+          },
           size: {
             type: String,
             default: () => {
