@@ -147,6 +147,8 @@ export default {
     ...mapGetters("articles", ["selected"]),
     processedHtml() {
       let html = this.selected.attributes.content
+        .replace("{{", "<span>{<span>{")
+        .replace("}}", "</span>}</span>}")
         .replace(
           "<p>[[EmailSubscriptionForm]]</p>",
           "<EmailSubscriptionForm />"
@@ -197,7 +199,7 @@ export default {
     margin: auto
     display: flex
     flex-direction: column
-    height: 100%;
+    height: 100%
     justify-content: center
     .title, .subtitle
       color: $white
