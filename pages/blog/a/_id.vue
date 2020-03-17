@@ -161,9 +161,9 @@ export default {
           `<CodeSnippet :index="${index}" :text="html"/>`
         );
       });
-      html
-        .replace(/\{\{/gims, "<span>{</span><span>{</span>")
-        .replace(/\{\{/gims, "<span>}</span><span>}</span>")
+      html = html
+        .replace("{{", "<span>{</span><span>{</span>")
+        .replace("}}", "<span>}</span><span>}</span>")
         .replace(
           "<p>[[EmailSubscriptionForm]]</p>",
           "<EmailSubscriptionForm />"
