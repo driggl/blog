@@ -28,8 +28,12 @@
             <div class="comments">
               <vue-disqus
                 shortname="driggl"
-                :identifier="'article-' + selected.id"
-                :url="'https://driggl.com/blog/a/' + selected.attributes.slug"
+                :identifier="'article-' + selected.id + '-v2'"
+                :url="
+                  'https://driggl.com/blog/a/' +
+                    selected.attributes.slug +
+                    '?comments-version=2'
+                "
                 :title="selected.attributes.title"
               />
             </div>
