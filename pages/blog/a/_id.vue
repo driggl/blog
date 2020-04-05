@@ -29,8 +29,8 @@
               <vue-disqus
                 shortname="driggl"
                 :identifier="'article-' + selected.id"
-                :url="'https://driggl.com/blog/a/' + selected.slug"
-                :title="selected.title"
+                :url="'https://driggl.com/blog/a/' + selected.attributes.slug"
+                :title="selected.attributes.title"
               />
             </div>
           </div>

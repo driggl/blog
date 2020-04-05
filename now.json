@@ -22,7 +22,8 @@
   "env": {
     "FB_APP_ID": "@fb-app-id",
     "FB_PIXEL_ID": "@fb-pixel-id",
-    "GA_UA": "@ga-ua"
+    "GA_UA": "@ga-ua",
+    "API_URL": "@api-url"
   },
   "build": {
     "env": {
