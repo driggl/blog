@@ -155,7 +155,7 @@ export default {
         /<pre[^>]*>.*?<\/pre>/gims
       );
 
-      preContents.forEach((preContent, index) => {
+      (preContents || []).forEach((preContent, index) => {
         html = html.replace(
           preContent,
           `<CodeSnippet :index="${index}" :text="html"/>`
