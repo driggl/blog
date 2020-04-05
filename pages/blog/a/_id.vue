@@ -201,8 +201,16 @@ export default {
       };
     }
   },
-  async fetch({ app, route }) {
-    await app.store.dispatch("articles/getArticle", route.params.id);
+  async fetch({ app, route, redirect }) {
+    if (route.path.indexOf("undefined") != -1) {
+      return redirect(301, "/blog/a/why-we-are-not-dry");
+    }
+
+    await app.store
+      .dispatch("articles/getArticle", route.params.id)
+      .catch(() => {
+        redirect(301, "/blog");
+      });
   }
 };
 </script>
