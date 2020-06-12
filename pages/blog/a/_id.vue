@@ -165,6 +165,25 @@ export default {
           `<CodeSnippet :index="${index}" :text="html"/>`
         );
       });
+
+      html = html.replace(/\[\[([A-Z]+):(.*?)\]\]/gims, function(
+        match,
+        group1,
+        group2,
+        offset,
+        string
+      ) {
+        if (!group1 || !group2) {
+          //or check arguments.length, if less than 5 return..
+          return;
+        }
+        if (group1.toUpperCase() === "OM") {
+          return "<div id='" + group2 + "'></div>";
+        } else {
+          return string;
+        }
+      });
+
       html = html
         .replace("{{", "<span>{</span><span>{</span>")
         .replace("}}", "<span>}</span><span>}</span>")
