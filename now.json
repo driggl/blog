@@ -14,6 +14,10 @@
       "headers": {
         "Location": "https://driggl.com"
       }
+    },
+    {
+      "src": "https://driggl.com/sitemap.xml.gz",
+      "dest": "https://driggl-prod.s3.eu-central-1.amazonaws.com/sitemaps/blog/99a95609-d8fd-4a84-994c-2386fd1c15de/sitemap.xml.gz"
     }
   ],
   "github": {
