@@ -1,13 +1,19 @@
 <template>
   <div>
     <nuxt />
+    <footer>
+      <div class="content">
+        Copyright © Driggl 2020.&nbsp;
+        <a href="https://driggl.com/privacy-policy">Privacy Policy</a>
+      </div>
+    </footer>
   </div>
 </template>
 
 <style>
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
