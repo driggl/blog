@@ -32,7 +32,7 @@
           Courses
         </navbar-item>
 
-        <navbar-item :url="'https://patreon.com/driggl'" :external="true">
+        <navbar-item :url="'https://github.com/sponsors/driggl'" :external="true">
           Support
         </navbar-item>
       </div>
