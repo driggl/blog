@@ -229,11 +229,13 @@ export default {
       return redirect(301, "/blog/a/why-we-are-not-dry");
     }
 
-    await app.store
-      .dispatch("articles/getArticle", route.params.id)
-      .catch(() => {
-        redirect(301, "/blog");
-      });
+    try {
+      await app.store
+        .dispatch("articles/getArticle", route.params.id)
+        .catch(() => {
+          redirect(301, "/blog");
+        });
+    } catch (err) {}
   }
 };
 </script>

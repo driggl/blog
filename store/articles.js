@@ -57,16 +57,18 @@ export const actions = {
     //   page,
     //   perPage: state.perPage,
     // })
-    const { data, links } = await this.$axios.$get("/articles", { params: { "page[number]": page } })
-    // commit('users/SET_USERS', included.filter(({ type }) => type === 'user'), {
-    //   root: true
-    // })
+    try {
+      const { data, links } = await this.$axios.$get("/articles", { params: { "page[number]": page } })
+      if (!links.next) {
+        commit('LOAD_ALL', true)
+      }
 
-    if (!links.next) {
+      commit('SET', data)
+    } catch(err) {
+      commit('SET', [])
       commit('LOAD_ALL', true)
     }
 
-    commit('SET', data)
     commit('INCREASE_PAGES')
 
     return state.articles
