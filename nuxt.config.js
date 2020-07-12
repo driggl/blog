@@ -52,6 +52,7 @@ export default {
    */
   plugins: [
     '~/plugins/disqus',
+    { src: '@/plugins/infinite-loading', mode: 'client' },
     '~/plugins/optinmonster'
   ],
   /*

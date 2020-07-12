@@ -2,7 +2,7 @@
   <div>
     <nuxt />
     <footer>
-      <div class="content">
+      <div class="content has-text-centered">
         Copyright © Driggl 2020.&nbsp;
         <a href="https://driggl.com/privacy-policy">Privacy Policy</a>
       </div>

@@ -9,23 +9,18 @@
           </div>
           <div class="column is-two-third-tablet is-three-quarters-desktop">
             <article-list :class="'section'" :articles="articles" />
-            <client-only>
-              <InfiniteLoading
-                spinner="bubbles"
-                :distance="20"
-                @infinite="onNextPage"
-              >
-                <template #spinner>
-                  <DglLoader />
-                </template>
-                <template #no-results>
-                  <email-subscription-form
-                    :showLabel="false"
-                    :placeholder="'Email'"
-                  />
-                </template>
-              </InfiniteLoading>
-            </client-only>
+            <InfiniteLoading
+              :distance="20"
+              @infinite="onNextPage"
+            >
+              <template #no-more>
+                <email-subscription-form
+                  :showLabel="false"
+                  :placeholder="'Email'"
+                  style="margin-bottom: 20px;"
+                />
+              </template>
+            </InfiniteLoading>
           </div>
           <div class="column is-one-third-tablet is-one-quarter-desktop">
             <section class="section">
