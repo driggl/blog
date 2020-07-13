@@ -20,7 +20,7 @@
         class="button is-primary has-text-weight-bold"
         :class="size === 'small' ? 'is-medium' : 'is-large'"
       >
-        Take this course! ->
+        Take this course!
       </a>
     </div>
   </div>

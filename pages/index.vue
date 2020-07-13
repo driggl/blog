@@ -27,7 +27,7 @@
         <div class="container has-text-centered">
           <h2 class="title">
             Experienced & Trusted by
-            <strong><span class="has-text-orange">700+</span></strong> People
+            <strong><span class="has-text-orange">1000+</span></strong> People
             worldwide
           </h2>
           <a
