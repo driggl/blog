@@ -30,20 +30,20 @@ export default {
     }
   },
   created() {
-    if (!this.getGDPR() === true) {
+    if (this.getGDPR() != "accepted") {
       this.isOpen = true;
     }
   },
   methods: {
     getGDPR() {
       if (process.browser) {
-        return localStorage.getItem("GDPR:accepted", true);
+        return localStorage.getItem("GDPR");
       }
     },
     accept() {
       if (process.browser) {
         this.isOpen = false;
-        localStorage.setItem("GDPR:accepted", true);
+        localStorage.setItem("GDPR", "accepted");
       }
     }
   }
