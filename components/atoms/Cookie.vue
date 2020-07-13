@@ -24,12 +24,7 @@ export default {
       isOpen: false
     };
   },
-  computed: {
-    containerPosition() {
-      return `cookie--${this.position}`;
-    }
-  },
-  created() {
+  mounted() {
     if (this.getGDPR() != "accepted") {
       this.isOpen = true;
     }
