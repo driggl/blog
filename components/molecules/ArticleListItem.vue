@@ -11,7 +11,7 @@
           <h3 class="title is-5">{{ title }}</h3>
           <div class="article-meta">
             <span>Category: </span><strong>{{ category }}</strong>
-            <span>Author: </span><strong>{{ author }}</strong>
+            <span>Author: </span><strong><a href="https://twitter.com/sebwilgosz">{{ author }}</a></strong>
           </div>
           <div class="content">
             <p>{{ content }}</p>

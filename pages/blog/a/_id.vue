@@ -22,7 +22,7 @@
           <div class="column is-two-third-tablet is-one-half-desktop">
             <div class="article-meta">
               <span>Category: </span><strong>Web development</strong>
-              <span>Author: </span><strong>Sebastian Wilgosz</strong>
+              <span>Author: </span><strong><a href="https://twitter.com/sebwilgosz" target="_blank">{{ author }}</a></strong>
             </div>
             <component :is="processedHtml" />
             <div class="comments">
@@ -143,7 +143,7 @@ export default {
     };
   },
   data() {
-    return { size: "small" };
+    return { size: "small", author: "Sebastian Wilgosz" };
   },
   components: {
     TopNav
