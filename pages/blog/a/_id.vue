@@ -141,7 +141,7 @@ export default {
     };
   },
   data() {
-    return { size: "small", author: { name: "Sebastian Wilgosz", url: "https://twitter.com/sebwilgosz" } };
+    return { size: "small" };
   },
   components: {
     TopNav,
@@ -149,6 +149,9 @@ export default {
   },
   computed: {
     ...mapGetters("articles", ["selected"]),
+    author() {
+      return this.$store.getters['authors/authors'].get(this.selected.relationships.author.data.id).attributes;
+    },
     html() {
       return this.selected.attributes.content;
     },

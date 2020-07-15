@@ -65,7 +65,7 @@ export default {
   },
   computed: {
     author() {
-      return { name: "Sebastian Wilgosz", url: "https://twitter.com/sebwilgosz" };
+      return this.$store.getters['authors/authors'].get(this.authorId).attributes;
     }
   }
 };

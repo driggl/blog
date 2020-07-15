@@ -65,7 +65,7 @@ export default {
       /* module options */
       track: 'PageView',
       pixelId: process.env.FB_PIXEL_ID,
-      disabled: false
+      disabled: (process.env.NODE_ENV == 'development')
     }],
   ],
 

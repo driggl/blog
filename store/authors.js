@@ -1,38 +1,24 @@
 export const state = () => ({
-  articles: new Map(),
-  pages: 0,
-  perPage: 5,
-  allLoaded: false,
+  authors: new Map(),
   selected: null
 })
 
 export const mutations = {
   SET(state, payload) {
-    const articles = new Map(state.articles)
-    payload.forEach((article) => {
-      articles.set(article.id, article)
+    const authors = new Map(state.authors)
+    payload.forEach((author) => {
+      authors.set(author.id, author)
     })
-    state.articles = articles
+    state.authors = authors
   },
-  ADD_INCLUDED_USERS(state, users) {
-    state.includedUsers.push(...users)
+  SELECT(state, author) {
+    state.selected = author
   },
-  SELECT(state, newArticle) {
-    state.selected = newArticle
-  },
-  INCREASE_PAGES(state) {
-    state.pages += 1
-  },
-  LOAD_ALL(state, payload) {
-    state.allLoaded = payload
-  }
 }
 
 export const getters = {
-  articles: ({ articles }) => articles,
-  selected: ({ selected }) => selected,
-  pages: ({ pages }) => pages,
-  allLoaded: ({ allLoaded }) => allLoaded
+  authors: ({ authors }) => authors,
+  selected: ({ selected }) => selected
 }
 
 export const actions = {
@@ -53,6 +39,10 @@ export const actions = {
       page = state.pages + 1
     }
 
+    // const { data, links } = await this.$repositories.articles.index({
+    //   page,
+    //   perPage: state.perPage,
+    // })
     try {
       const { data, links, included } = await this.$axios.$get("/articles", { params: { "page[number]": page } })
       if (!links.next) {
@@ -61,7 +51,7 @@ export const actions = {
 
       commit('SET', data)
 
-      commit('authors/SET', included.filter(({ type }) => type === 'authors'), { root: true})
+      commit('users/SET', included.filter(({ type }) => type === 'user'), { root: true})
 
     } catch(err) {
       commit('SET', [])
@@ -74,6 +64,11 @@ export const actions = {
   },
 
   async getArticle({ getters, commit, state }, selectedId) {
+
+    // const { data, links } = await this.$repositories.articles.index({
+    //   page,
+    //   perPage: state.perPage,
+    // })
     const article = Array.from(getters.articles).map((article) => article[1])
       .find((article) => article.attributes.slug === selectedId)
 
@@ -81,15 +76,13 @@ export const actions = {
       commit('SELECT', article)
       return state.selected
     }
-    try {
-      const { data, included } = await this.$axios.$get(`/articles/${selectedId}`)
-      commit('SET', [data])
-      commit('SELECT', data)
-      commit('authors/SET', included.filter(({ type }) => type === 'authors'), { root: true})
-    } catch (err) {
-      commit('SET', [])
-      commit('SELECT', null)
-    }
+    const { data } = await this.$axios.$get(`/articles/${selectedId}`)
+    // commit('users/SET_USERS', included.filter(({ type }) => type === 'user'), {
+    //   root: true
+    // })
+
+    commit('SET', [data])
+    commit('SELECT', data)
 
     return state.selected
   }
