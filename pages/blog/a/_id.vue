@@ -20,10 +20,7 @@
         <div class="columns">
           <div class="column is-hidden-touch is-one-quarter-desktop" />
           <div class="column is-two-third-tablet is-one-half-desktop">
-            <div class="article-meta">
-              <span>Category: </span><strong>Web development</strong>
-              <span>Author: </span><strong><a href="https://twitter.com/sebwilgosz" target="_blank">{{ author }}</a></strong>
-            </div>
+            <article-meta-info :author="author" />
             <component :is="processedHtml" />
             <div class="comments">
               <vue-disqus
@@ -54,6 +51,7 @@ import { mapGetters } from "vuex";
 import TopNav from "~/components/organisms/TopNav";
 import CourseAd from "~/components/organisms/ads/CourseAd";
 import CodeSnippet from "~/components/organisms/CodeSnippet";
+import ArticleMetaInfo from "~/components/atoms/ArticleMetaInfo";
 
 export default {
   name: "SingleArticle",
@@ -143,10 +141,11 @@ export default {
     };
   },
   data() {
-    return { size: "small", author: "Sebastian Wilgosz" };
+    return { size: "small", author: { name: "Sebastian Wilgosz", url: "https://twitter.com/sebwilgosz" } };
   },
   components: {
-    TopNav
+    TopNav,
+    ArticleMetaInfo
   },
   computed: {
     ...mapGetters("articles", ["selected"]),

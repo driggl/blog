@@ -9,10 +9,7 @@
         </div>
         <div class="card-content">
           <h3 class="title is-5">{{ title }}</h3>
-          <div class="article-meta">
-            <span>Category: </span><strong>{{ category }}</strong>
-            <span>Author: </span><strong><a href="https://twitter.com/sebwilgosz">{{ author }}</a></strong>
-          </div>
+          <article-meta-info :author="author" :links="false" />
           <div class="content">
             <p>{{ content }}</p>
           </div>
@@ -33,6 +30,8 @@
 </template>
 
 <script>
+import ArticleMetaInfo from "~/components/atoms/ArticleMetaInfo";
+
 export default {
   props: {
     authorId: {
@@ -61,9 +60,12 @@ export default {
       required: true
     }
   },
+  components: {
+    ArticleMetaInfo
+  },
   computed: {
     author() {
-      return "Sebastian Wilgosz";
+      return { name: "Sebastian Wilgosz", url: "https://twitter.com/sebwilgosz" };
     }
   }
 };
