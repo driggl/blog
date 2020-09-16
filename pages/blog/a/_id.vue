@@ -150,7 +150,11 @@ export default {
   computed: {
     ...mapGetters("articles", ["selected"]),
     author() {
-      return this.$store.getters['authors/authors'].get(this.selected.relationships.author.data.id).attributes;
+      const authorObj = this.$store.getters['authors/authors'].get(this.authorId)
+      if (!authorObj) {
+        return {}
+      }
+      return authorObj.attributes;
     },
     html() {
       return this.selected.attributes.content;
