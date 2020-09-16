@@ -65,7 +65,11 @@ export default {
   },
   computed: {
     author() {
-      return this.$store.getters['authors/authors'].get(this.authorId).attributes;
+      const authorObj = this.$store.getters['authors/authors'].get(this.authorId)
+      if (!authorObj) {
+        return {}
+      }
+      return authorObj.attributes;
     }
   }
 };
