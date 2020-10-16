@@ -24,13 +24,14 @@
     "silent": true
   },
   "env": {
+    "BLOG_API_URL": "@blog-api-url",
     "FB_APP_ID": "@fb-app-id",
     "FB_PIXEL_ID": "@fb-pixel-id",
-    "GA_UA": "@ga-ua",
-    "API_URL": "@api-url"
+    "GA_UA": "@ga-ua"
   },
   "build": {
     "env": {
+      "BLOG_API_URL": "@blog-api-url",
       "FB_APP_ID": "@fb-app-id",
       "FB_PIXEL_ID": "@fb-pixel-id",
       "GA_UA": "@ga-ua"

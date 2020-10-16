@@ -78,7 +78,7 @@ export default {
   ],
   axios: {
     // proxy: true
-    baseURL: 'https://api.sourcerio.com/v1/blogs/driggl'
+    baseURL: process.env.BLOG_API_URL
   },
   // proxy: {
   //   '/api/': {
@@ -109,6 +109,7 @@ export default {
 
   env: {
     GA_UA: process.env.GA_UA,
-    FB_APP_ID: process.env.FB_APP_ID
+    FB_APP_ID: process.env.FB_APP_ID,
+    BLOG_API_URL: process.env.BLOG_API_URL
   }
 };
