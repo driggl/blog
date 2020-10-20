@@ -9,7 +9,7 @@
           </div>
           <div class="column is-two-third-tablet is-three-quarters-desktop">
             <article-list :class="'section'" :articles="articles" />
-            <client-only>
+            <!-- <client-only>
               <InfiniteLoading
                 :distance="20"
                 @infinite="onNextPage"
@@ -22,7 +22,7 @@
                   />
                 </template>
               </InfiniteLoading>
-            </client-only>
+            </client-only> -->
           </div>
           <div class="column is-one-third-tablet is-one-quarter-desktop">
             <section class="section">
