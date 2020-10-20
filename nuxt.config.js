@@ -61,6 +61,9 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
+    ['nuxt-lazy-load', {
+      // Your options
+    }],
     ['nuxt-facebook-pixel-module', {
       /* module options */
       track: 'PageView',
