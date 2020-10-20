@@ -54,7 +54,7 @@ export const actions = {
     }
 
     try {
-      const { data, links, included } = await this.$axios.$get("/articles", { params: { "page[number]": page } })
+      const { data, links, included } = await this.$axios.$get("/articles", { params: { "page[number]": page, "page[size]": 10 } })
       if (!links.next) {
         commit('LOAD_ALL', true)
       }

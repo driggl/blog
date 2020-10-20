@@ -62,7 +62,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
     ['nuxt-lazy-load', {
-      // Your options
+      defaultImage: '/images/placeholder.png',
     }],
     ['nuxt-facebook-pixel-module', {
       /* module options */
