@@ -38,7 +38,7 @@
 <script>
 import { mapGetters } from "vuex";
 import ArticleList from "~/components/organisms/ArticleList";
-import InfiniteLoading from "vue-infinite-loading";
+// import InfiniteLoading from "vue-infinite-loading";
 import DglLoader from "~/components/atoms/DglLoader.vue";
 import Logo from "~/components/Logo.vue";
 import TopNav from "~/components/organisms/TopNav";
@@ -48,7 +48,7 @@ export default {
   components: {
     ArticleList,
     DglLoader,
-    InfiniteLoading,
+    // InfiniteLoading,
     Logo,
     TopNav
   },
@@ -100,18 +100,18 @@ export default {
     await app.store.dispatch("articles/getPage", { type: "first" });
   },
   methods: {
-    async onNextPage($state) {
-      await this.getNextPage();
+    // async onNextPage($state) {
+    //   await this.getNextPage();
 
-      if (this.allLoaded) {
-        $state.complete();
-      } else {
-        $state.loaded();
-      }
-    },
-    getNextPage(type) {
-      return this.$store.dispatch("articles/getPage", { type: "next" });
-    }
+    //   if (this.allLoaded) {
+    //     $state.complete();
+    //   } else {
+    //     $state.loaded();
+    //   }
+    // },
+    // getNextPage(type) {
+    //   return this.$store.dispatch("articles/getPage", { type: "next" });
+    // }
   }
 };
 </script>
