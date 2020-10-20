@@ -1,5 +1,4 @@
 <template>
-  <!-- <div>HELLO</div> -->
   <mailchimp-subscribe
     url="https://driggl.us9.list-manage.com/subscribe/post-json"
     user-id="0cbf9512faab835f9be304437"
