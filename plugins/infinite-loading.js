@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import InfiniteLoading from 'vue-infinite-loading'
+import InfiniteLoading from '../vendor/vue-infinite-loading'
 import DglLoader from '@/components/atoms/DglLoader'
 
 
