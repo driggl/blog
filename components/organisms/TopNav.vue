@@ -32,8 +32,8 @@
           Courses
         </navbar-item>
 
-        <navbar-item :url="'https://github.com/sponsors/driggl'" :external="true">
-          Support
+        <navbar-item :url="'https://github.com/sponsors/swilgosz'" :external="true">
+          Github Sponsors
         </navbar-item>
       </div>
     </div>
