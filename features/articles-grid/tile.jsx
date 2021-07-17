@@ -37,12 +37,11 @@ const useStyles = makeStyles((theme) => ({
 
 const ArticleTile = ({ article }) => {
   const classes = useStyles();
-  const author = useSelector((state) =>
-    findAuthor(state, article.relationships.author.data.id)
-  );
-  const {
-    attributes: { tags, excerpt, thumbnail, content, slug, title },
-  } = article;
+  // const author = useSelector((state) =>
+  //   findAuthor(state, article.author)
+  // );
+  const author = { name: article.author };
+  const { tags, excerpt, thumbnail, content, slug, title } = article;
   return (
     <Card className={classes.root}>
       <NextLink href={`/blog/a/${slug}`} passHref>
@@ -60,15 +59,15 @@ const ArticleTile = ({ article }) => {
         subheader={
           <>
             <Typography variant="subtitle1">
-              {author.attributes.fullName}, {readingTime(content).text}
+              {/* {author.name}, {readingTime(content).text} */}
               <Box>
-                {tags.length ? (
+                {/* {tags.length ? (
                   <>
                     {tags.map((tag) => (
                       <Chip label={tag} />
                     ))}
                   </>
-                ) : null}
+                ) : null} */}
               </Box>
             </Typography>
           </>

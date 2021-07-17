@@ -1,16 +1,16 @@
 import { NextSeo } from 'next-seo';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import React, { useEffect } from 'react';
 import ArticlesGrid from '../../features/articles-grid/index';
-import getArticlesData from '../../utils/get-articles-data';
+import ArticleLayout from '../../layouts/article-layout';
 import { setAuthors } from '../../redux/slices/authors';
 import { setArticles } from '../../redux/slices/articles';
-import ArticleLayout from '../../layouts/article-layout';
+import { getAllFilesFrontMatter } from "../../utils";
 
-export default function BlogIndex({ articles, authors }) {
+export default function BlogIndex({ posts, authors }) {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(setArticles(articles));
+    dispatch(setArticles(posts));
     dispatch(setAuthors(authors));
   }, [dispatch]);
   return (
@@ -27,16 +27,16 @@ export default function BlogIndex({ articles, authors }) {
           type: 'website',
         }}
       />
-      <ArticleLayout article={<ArticlesGrid />} />
+      <ArticleLayout article={<ArticlesGrid articles={posts} />} />
     </>
   );
 }
 
 export async function getStaticProps() {
-  const { articles, authors } = await getArticlesData();
+  const posts = await getAllFilesFrontMatter("articles");
+  const authors = await getAllFilesFrontMatter("team");
 
   return {
-    props: { articles, authors }, // will be passed to the page component as props
-    revalidate: 604800, // revalidate the articles listing every week
+    props: { posts, authors }, // will be passed to the page component as props
   };
 }

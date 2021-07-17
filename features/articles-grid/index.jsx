@@ -10,9 +10,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ArticlesDisplay = () => {
+const ArticlesDisplay = (props) => {
   const classes = useStyles();
-  const articles = useSelector(getAllArticles);
+  const articles = props.articles;
   return (
     <Grid container component="ul" className={classes.list} spacing={6}>
       {articles.map((article, index) => (
