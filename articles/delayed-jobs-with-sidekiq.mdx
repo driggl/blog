@@ -1,3 +1,20 @@
+---
+title: "Delayed jobs with Sidekiq"
+excerpt: "Delivering fast responses to the client is crucial for any application when user matters - for me that simply means: for ANY application. Delegating time-consuming tasks to the background job is something every developer need to know no matter if one works on API only application or full stack webpages."
+slug: "delayed-jobs-with-sidekiq"
+tags: []
+thumbnail:
+  blog: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/6de0a110-1411-460e-a492-b2c961cf783e/cover/blog.jpeg"
+  full: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/6de0a110-1411-460e-a492-b2c961cf783e/cover/full.jpeg"
+  mini: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/6de0a110-1411-460e-a492-b2c961cf783e/cover/mini.jpeg"
+  small: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/6de0a110-1411-460e-a492-b2c961cf783e/cover/small.jpeg"
+  medium: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/6de0a110-1411-460e-a492-b2c961cf783e/cover/medium.jpeg"
+  sharing: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/6de0a110-1411-460e-a492-b2c961cf783e/cover/sharing.jpeg"
+  original: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/6de0a110-1411-460e-a492-b2c961cf783e/cover/original.jpeg"
+publishedAt: "2018-09-29"
+author: "swilgosz"
+---
+
 Delivering fast responses to the client is crucial **for any application when user matters** - for me that simply means: for ANY application. Delegating time-consuming tasks to the background job is something every developer need to know no matter if one works on API only application or full stack webpages.
 
 In Rails there are many solutions available to achieve such thing ach of them coming with its own advantages and [Sidekiq](https://github.com/mperham/sidekiq) is not an exception.

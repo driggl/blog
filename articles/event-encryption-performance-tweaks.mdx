@@ -1,3 +1,20 @@
+---
+title: "How I've improved the RailsEventStore's encryption mechanism in EventStoreClient"
+excerpt: "One of my biggest conerns in relation of event-sourced systems were: How to handle GDPR requirements in databases you cannot modify? What should we do when one of our clients will come to us and ask to delete ALL their data, if one of the biggest advantages and benefits of the event-sourced systems is a complete history of what happened in the past? Here is how."
+slug: "event-encryption-performance-tweaks"
+tags: ["event sourcing", "rails", "ruby" ]
+thumbnail:
+  blog: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/15fc3b3f-be48-40ca-a8c0-1835344d9996/cover/blog.jpeg"
+  full: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/15fc3b3f-be48-40ca-a8c0-1835344d9996/cover/full.jpeg"
+  mini: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/15fc3b3f-be48-40ca-a8c0-1835344d9996/cover/mini.jpeg"
+  small: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/15fc3b3f-be48-40ca-a8c0-1835344d9996/cover/small.jpeg"
+  medium: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/15fc3b3f-be48-40ca-a8c0-1835344d9996/cover/medium.jpeg"
+  sharing: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/15fc3b3f-be48-40ca-a8c0-1835344d9996/cover/sharing.jpeg"
+  original: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/15fc3b3f-be48-40ca-a8c0-1835344d9996/cover/original.jpeg"
+publishedAt: "2020-01-30"
+author: "swilgosz"
+---
+
 I am really amazed by the work he _Arkency_ did in favor of the community doing event-sourcing in Ruby applications and the [RailsEventStore](https://railseventstore.org/) is the best proof of their engagement.
 
 When I've first had a chance to work with it, Immediately I've risen a hand asking about an important issue that was not yet covered - and it was about **handling GDPR issues**.

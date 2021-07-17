@@ -1,3 +1,21 @@
+---
+title: "How we Integrated Image Processing service with rails application"
+excerpt: "Image processing in rails applications is pretty easy. There are plenty of solutions almost built-in into the exosystem you can use to make it work. However, there is one approach that beats the Hell out of the competition. Meet Imageproxy"
+slug: "integrating-imageproxy-with-rails"
+
+tags: []
+thumbnail:
+  blog: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/fd0ea04e-339e-4be0-9725-e7d01d794156/cover/blog.jpeg"
+  full: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/fd0ea04e-339e-4be0-9725-e7d01d794156/cover/full.jpeg"
+  mini: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/fd0ea04e-339e-4be0-9725-e7d01d794156/cover/mini.jpeg"
+  small: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/fd0ea04e-339e-4be0-9725-e7d01d794156/cover/small.jpeg"
+  medium: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/fd0ea04e-339e-4be0-9725-e7d01d794156/cover/medium.jpeg"
+  sharing: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/fd0ea04e-339e-4be0-9725-e7d01d794156/cover/sharing.jpeg"
+  original: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/fd0ea04e-339e-4be0-9725-e7d01d794156/cover/original.jpeg"
+publishedAt: "2020-02-21"
+author: "swilgosz"
+---
+
 Image processing in rails applications is pretty easy. There are plenty of solutions almost built-in into the ecosystem you can use to make it work. However, there is one approach that beats the Hell out of the competition. **Meet Imageproxy.**
 
 > **TLDR:** With [ImageProxy](https://github.com/willnorris/imageproxy), the complete file uploader with more flexibility than Capybara or ActiveStorage allows took only 70 lines of code. Se the gist at the bottom for the complete code. Or read to know some thoughts hidden behind.

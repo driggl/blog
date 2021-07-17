@@ -1,3 +1,21 @@
+---
+title: "Handling exceptions in Rails API applications"
+excerpt: "Handling exceptions in your API applications is quite an important thing, and if you want to keep things DRY, you should think how to do it in the proper way."
+slug: "handling-exceptions-in-rails-applications"
+
+tags: []
+thumbnail:
+  blog: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/de66af82-1a46-4caa-9d3b-2e221cabc0e1/cover/blog.jpeg"
+  full: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/de66af82-1a46-4caa-9d3b-2e221cabc0e1/cover/full.jpeg"
+  mini: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/de66af82-1a46-4caa-9d3b-2e221cabc0e1/cover/mini.jpeg"
+  small: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/de66af82-1a46-4caa-9d3b-2e221cabc0e1/cover/small.jpeg"
+  medium: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/de66af82-1a46-4caa-9d3b-2e221cabc0e1/cover/medium.jpeg"
+  sharing: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/de66af82-1a46-4caa-9d3b-2e221cabc0e1/cover/sharing.jpeg"
+  original: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/de66af82-1a46-4caa-9d3b-2e221cabc0e1/cover/original.jpeg"
+publishedAt: "2018-10-25"
+author: "swilgosz"
+---
+
 Handling exceptions in your API applications is quite an important thing, and if you want to keep things DRY, you should think how to do it in the proper way. In our [Ruby on Rails API course](https://www.udemy.com/ruby-on-rails-api-the-complete-guide/), I've shown how to implement the error handling using ErrorSerializer and ActiveModelSerializers gem and here I'm going to show you even better approach to this topic when you can unify EVERY error across the whole API application.
 
 <CourseAd />
