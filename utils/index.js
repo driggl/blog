@@ -76,8 +76,7 @@ export async function getRssData() {
     ttl: "60",
   });
 
-  const posts = await getAllFilesFrontMatter("stray");
-  const episodes = await getAllFilesFrontMatter("episodes");
+  const posts = await getAllFilesFrontMatter("articles");
   const postsWithSlug = posts.map((item) => ({
     ...item,
     url: `https://driggl.com/episodes/${item.slug}`,

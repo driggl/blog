@@ -2,10 +2,9 @@ import RSS from "rss";
 
 import { getRssData } from "../utils";
 
-export default () => {};
+export default () => { };
 
 // const blogPosts = getRssXml(fetchMyPosts());
-// const posts = await getFiles("stray");
 // const episodes = await getFiles("episodes");
 
 /**
