@@ -2,7 +2,6 @@ import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/core/styles';
 import theme from '../styles/theme';
-
 export default class MyDocument extends Document {
   render() {
     return (
@@ -11,13 +10,20 @@ export default class MyDocument extends Document {
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
           <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="Hanami Mastery RSS channel!" href="/feed"
+          />
+          <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
+          <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=60b823ffeed0fd001128d645&product=sticky-share-buttons' async='async'></script>
         </Head>
         <body>
           <Main />
           <NextScript />
+          <script type="text/javascript" src="https://a.omappapi.com/app/js/api.min.js" data-account="82043" data-user="72987" async></script>
         </body>
       </Html>
     );

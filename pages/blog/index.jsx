@@ -1,30 +1,28 @@
-import { NextSeo } from 'next-seo';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import ArticlesGrid from '../../features/articles-grid/index';
-import ArticleLayout from '../../layouts/article-layout';
-import { setAuthors } from '../../redux/slices/authors';
-import { setArticles } from '../../redux/slices/articles';
+import { NextSeo } from "next-seo";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import ArticleLayout from "../../layouts/article-layout";
+import ArticlesGrid from "../../features/articles-grid/index";
+import { setAuthors } from "../../redux/slices/authors";
 import { getAllFilesFrontMatter } from "../../utils";
 
 export default function BlogIndex({ posts, authors }) {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(setArticles(posts));
     dispatch(setAuthors(authors));
-  }, [dispatch]);
+  }, [authors]);
   return (
     <>
       <NextSeo
         title="Recent articles"
-        titleTemplate="%s | Driggl - Modern web development"
-        description="Build modern websites like a professional with Driggl's Community!"
+        titleTemplate="%s | Driggl - Modern Web development"
+        description="Learn how to develop ruby web applications in a modern way!"
         openGraph={{
-          title: 'Recent articles',
+          title: "Recent articles",
           description:
-            'Newest content from web Professionals and the Modern web development Community!',
-          images: ['/home-cover.jpg'],
-          type: 'website',
+            "Learn how to develop Ruby web applications in a modern way!",
+          images: ["/home-cover.jpg"],
+          type: "website",
         }}
       />
       <ArticleLayout article={<ArticlesGrid articles={posts} />} />

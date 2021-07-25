@@ -1,72 +1,81 @@
-import React from 'react';
-import hydrate from 'next-mdx-remote/hydrate';
-import { Container, Typography, makeStyles } from '@material-ui/core';
-import { DiscussionEmbed } from 'disqus-react';
-import { NextSeo } from 'next-seo';
-import getArticlesData from '../../../utils/get-articles-data';
-import getArticleData from '../../../utils/get-article-data';
-import components from '../../../features/mdx-components';
-import ArticleLayout from '../../../layouts/article-layout';
+import React from "react";
+import { Container, Typography, makeStyles } from "@material-ui/core";
+import { DiscussionEmbed } from "disqus-react";
+import { NextSeo } from "next-seo";
+import { MDXRemote } from "next-mdx-remote";
+import components from "../../../features/mdx-components";
+import ArticleLayout from "../../../layouts/article-layout";
+import { getFiles, getFileBySlug } from "../../../utils/";
+import { StickyShareButtons } from 'sharethis-reactjs';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
+    display: "flex",
     padding: 0,
     minHeight: theme.spacing(6),
   },
   hero: {
-    backgroundSize: 'cover',
-    display: 'flex',
+    backgroundSize: "cover",
+    display: "flex",
     minHeight: theme.spacing(75),
     color: theme.palette.common.white,
   },
   heroFilter: {
     flexGrow: 1,
-    backdropFilter: 'brightness(0.35)',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
+    backdropFilter: "brightness(0.35)",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
     padding: theme.spacing(2),
   },
   article: {
-    marginBottom: '100px'
+    marginBottom: "100px",
   },
 }));
 
-export default function Article({ source, article }) {
+export default function Article({ mdxSource, frontMatter }) {
   const classes = useStyles();
-  const content = hydrate(source, { components });
-  const { tags, slug, title, thumbnail, id, excerpt } = article;
+  const { tags, slug, videoId, title, thumbnail, id, excerpt } = frontMatter;
   const url = `${process.env.NEXT_PUBLIC_BASE_URL}/blog/a/${slug}`;
-
+  const videos = videoId ? [{ url: `https://youtu.be/${videoId}` }] : null;
   return (
     <>
       <NextSeo
         title={title}
-        titleTemplate=" %s | Driggl - Modern web development"
+        titleTemplate=" %s | Driggl - Modern web development!"
         twitter={{
-          site: '@drigglweb',
-          cardType: 'summary_large_image',
-          creator: '@sebwilgosz',
-          title,
-          description: excerpt,
-          image: thumbnail.sharing,
+          site: "@hanamimastery",
+          handle: "@sebwilgosz",
+          cardType: "summary_large_image",
         }}
+        additionalMetaTags={[{
+          name: 'twitter:image',
+          content: `${process.env.NEXT_PUBLIC_BASE_URL}${thumbnail.big}`,
+        }]}
         description={excerpt}
         openGraph={{
           article: {
-            authors: ['https://www.facebook.com/sebastian.wilgosz'],
+            authors: ["https://www.facebook.com/sebastian.wilgosz"],
             tags,
           },
+          locale: "en_US",
           url,
           title,
           description: excerpt,
-          images: thumbnail,
           defaultImageWidth: 120,
           defaultImageHeight: 630,
-          type: 'article',
-          site_name: 'Driggl - Modern Web Development',
+          type: "article",
+          site_name: "Driggl - Modern web development!",
+          videos: videos,
+          images: [
+            {
+              url: `${process.env.NEXT_PUBLIC_BASE_URL}${thumbnail.big}`,
+              width: 780,
+              height: 440,
+              alt: title,
+            }
+          ],
         }}
         facebook={{
           appId: process.env.NEXT_PUBLIC_FB_APP_ID,
@@ -83,12 +92,39 @@ export default function Article({ source, article }) {
       <ArticleLayout
         article={
           <Container maxWidth="lg" component="main">
+            <StickyShareButtons
+              config={{
+                alignment: 'left',    // alignment of buttons (left, right)
+                color: 'social',      // set the color of buttons (social, white)
+                enabled: true,        // show/hide buttons (true, false)
+                font_size: 14,        // font size for the buttons
+                hide_desktop: false,  // hide buttons on desktop (true, false)
+                labels: 'cta',     // button labels (cta, counts, null)
+                language: 'en',       // which language to use (see LANGUAGES)
+                min_count: 1,         // hide react counts less than min_count (INTEGER)
+                networks: [           // which networks to include (see SHARING NETWORKS)
+                  'twitter',
+                  'reddit',
+                  'linkedin',
+                  'facebook',
+                  'pinterest',
+                  'email'
+                ],
+                padding: 12,          // padding within buttons (INTEGER)
+                radius: 4,            // the corner radius on each button (INTEGER)
+                show_total: true,     // show/hide the total share count (true, false)
+                show_mobile: true,    // show/hide the buttons on mobile (true, false)
+                show_toggle: true,    // show/hide the toggle buttons (true, false)
+                size: 48,             // the size of each button (INTEGER)
+                top: 160,             // offset in pixels from the top of the page
+              }}
+            />
             <article className={classes.article}>
-              {content}
+              <MDXRemote {...mdxSource} components={components} />
             </article>
             <div>
               <DiscussionEmbed
-                shortname="driggl"
+                shortname='driggl'
                 config={{
                   url: `${url}?comments-version=2`,
                   title,
@@ -104,25 +140,18 @@ export default function Article({ source, article }) {
 }
 
 export async function getStaticPaths() {
-  const { articles } = await getArticlesData();
-  const paths = Object.values(articles).map((article) => ({
-    params: { slug: article.slug },
-  }));
-  return { paths, fallback: 'blocking' };
-}
-
-export async function getStaticProps(context) {
-  const articleData = await getArticleData(context.params.slug);
-  if (!articleData) {
-    return {
-      notFound: true,
-    };
-  }
-
-  const { source, article } = articleData;
+  const posts = await getFiles("articles");
 
   return {
-    props: { source, article }, // will be passed to the page component as props
-    revalidate: 604800, // revalidate the article every week
+    paths: posts.map((p) => ({
+      params: {
+        slug: p.replace(/\.md/, ""),
+      },
+    })),
+    fallback: false,
   };
+}
+export async function getStaticProps({ params }) {
+  const post = await getFileBySlug("articles", params.slug);
+  return { props: { ...post } };
 }

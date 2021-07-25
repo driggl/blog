@@ -61,12 +61,12 @@ export async function getAllFilesFrontMatter(type) {
 
 export async function getRssData() {
   const feed = new rss({
-    title: "Hanami Mastery newest episodes!",
-    description: "The best way to master Hanami ruby framework!",
-    feed_url: "https://hanamimastery.com/feed",
+    title: "Driggl Recent articles!",
+    description: "Modern Web development!",
+    feed_url: "https://driggl.com/feed",
     author: "Sebastian Wilgosz",
-    site_url: "https://hanamimastery.com",
-    image_url: "https://hanamimastery.com/logo-hm.jpeg",
+    site_url: "https://driggl.com",
+    image_url: "https://driggl.com/logo-hm.jpeg",
     managingEditor: "Sebastian Wilgosz",
     webMaster: "Sebastian Wilgosz",
     copyright: `${new Date().getFullYear()} Sebastian Wilgosz`,
@@ -76,12 +76,12 @@ export async function getRssData() {
     ttl: "60",
   });
 
-  const posts = await getAllFilesFrontMatter("articles");
+  const posts = await getAllFilesFrontMatter("stray");
+  const episodes = await getAllFilesFrontMatter("episodes");
   const postsWithSlug = posts.map((item) => ({
     ...item,
-    url: `https://driggl.com/a/${item.slug}`,
+    url: `https://driggl.com/episodes/${item.slug}`,
   }));
-
   const items = postsWithSlug.sort((itemA, itemB) => {
     if (itemA.publishedAt > itemB.publishedAt) return -1;
     if (itemA.publishedAt < itemB.publishedAt) return 1;

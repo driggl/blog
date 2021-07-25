@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://driggl.com
+
+# Sitemaps
+Sitemap: https://driggl.com/sitemap.xml
