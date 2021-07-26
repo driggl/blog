@@ -25,7 +25,7 @@ Here is how to do it properly.
 
 ## Install the script in the HTML body
 
-The first step is to place the OptinMonster's script tag into your HTML right before closing the _\<body>_ tag. You can find the script in the last step of creating the campaign and should look more or less like this:
+The first step is to place the OptinMonster's script tag into your HTML right before closing the _\<body\>_ tag. You can find the script in the last step of creating the campaign and should look more or less like this:
 
 ```html
 <script
