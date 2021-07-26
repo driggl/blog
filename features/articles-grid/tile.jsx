@@ -43,7 +43,7 @@ const ArticleTile = ({ article }) => {
   const author = useSelector((state) => findAuthor(state, authorName));
   return (
     <Card className={classes.root}>
-      <NextLink href={`/articles/${slug}`} passHref>
+      <NextLink href={`/blog/a/${slug}`} passHref>
         <CardActionArea>
           <CardMedia className={classes.media} image={thumbnail.big} />
         </CardActionArea>
@@ -51,7 +51,7 @@ const ArticleTile = ({ article }) => {
       <CardHeader
         disableTypography
         title={
-          <NextLink passHref href={`/articles/${slug}`}>
+          <NextLink passHref href={`/blog/a/${slug}`}>
             <Link variant="h5">{title}</Link>
           </NextLink>
         }
