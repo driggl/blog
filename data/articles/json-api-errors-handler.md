@@ -17,6 +17,10 @@ author: "swilgosz"
 
 When some time ago I came with an [advanced way of handling exceptions in Ruby Applications](https://driggl.com/blog/a/handling-exceptions-in-rails-applications) I realized, that this is a wider problem than I thought. A lot of people found the idea very useful and therefore I decided to go with this topic even further.
 
+
+I strongly encourage you to check my article about the [greater way of handling Errors in Rails Web applications using "dry-monads"](https://hanamimastery.com/episodes/7-untangle-your-app-with-dry-monads)! You can integrate `jsonapi_errors_handler` easily with Endpoints abstraction to make your code even more clean.
+
+
 ## JSON API Errors Handler
 
 The natural follow-up is a [JsonapiErrorsHandler gem](https://rubygems.org/gems/jsonapi_errors_handler). This is a small, open-source package that you can hook into any kind of Ruby or Rails application and it helps you handle API errors in the really convenient way.
