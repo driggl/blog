@@ -46,10 +46,10 @@ Chris Beams in his article presented quite nice **7 rules** for his commit messa
 The first line of every single commit I'm adding looks like this:
 
 ```
-    <TYPE>: <Title> (Maks 50 characters)
+    {{TYPE}}: {{Title}} (Maks 50 characters)
 ```
 
-where _\<type>_ is a short tag that allows developers to easily identify what is the commit about. The list of available types I use it as this:
+where _{{type}}_ is a short tag that allows developers to easily identify what is the commit about. The list of available types I use it as this:
 
 - **Feat** - feature, new functionality
 - **Fix** - bug fix, not adding anything new, but rather removing "unwanted feature".
