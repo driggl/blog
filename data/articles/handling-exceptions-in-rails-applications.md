@@ -20,6 +20,8 @@ Handling exceptions in your API applications is quite an important thing, and if
 
 <CourseAd />
 
+> UPDATE: I've recently came with even [greater way of handling Errors in Rails Web applications using "dry-monads"](https://hanamimastery.com/episodes/7-untangle-your-app-with-dry-monads)! It still uses this approah to serilize the errors for JSON:API purposes, but the actual mapping can be done in the more neat way!
+
 ### The final approach
 
 There is no point to cover the whole thought process of how we came with the final result, but if you're interested in any particular part just say it in the comments. The basic assumptions were to keep things DRY and unified across the whole application.
