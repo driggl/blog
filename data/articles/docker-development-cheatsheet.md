@@ -121,14 +121,14 @@ Now is the fun part. If you work with docker, you cannot just run _rails c_ to o
 This means you need to always call commands from within the service contexts.
 
 ```bash
-    docker exec -it <<CONTAINER_NAME>> <<COMMAND>> # runs shell command inside of the container
+    docker exec -it <<CONTAINER_NAME\>\> <<COMMAND\>\> # runs shell command inside of the container
 
-    docker logs -f <<service_name>> # show logs for specicic container
+    docker logs -f <<service_name\>\> # show logs for specicic container
 
     ### docker-compose versions
 
-    docker-compose exec <<SERVICE_NAME>> <<COMMAND>>
-    docker-compose logs -f <<SERVICE_NAME>> <<COMMAND>>
+    docker-compose exec <<SERVICE_NAME\>\> <<COMMAND\>\>
+    docker-compose logs -f <<SERVICE_NAME\>\> <<COMMAND\>\>
 ```
 
 What I usually do is calling:

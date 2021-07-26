@@ -1,7 +1,7 @@
 ---
 title: "CQRS API endpoints in Rails applications"
 excerpt: "CQRS in the API applications may be tricky at the start, but it is an amazing pattern to write complicated, scalable systems. Learn how to do it well."
-slug: "cars-api-endpoints-in-rails-applications"
+slug: "cqrs-api-endpoints-in-rails-applications"
 tags: [ "api", "cqrs", "rails", "ruby"]
 thumbnail:
   big: "https://driggl-prod.s3.eu-central-1.amazonaws.com/sourcer/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/articles/e4a9621f-8900-4908-a7ae-4311565c5895/cover/blog.jpeg"

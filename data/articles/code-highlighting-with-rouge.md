@@ -193,7 +193,7 @@ So far we managed to apply tags and CSS classes to every keyword in our snippet 
 
 Now the only thing left is to add some CSS rules to our stylesheets, so that classess inside of the* .hightlight* div will be colored properly. Fortunately **Rouge comes with several CSS themes** which we can choose from.
 
-```
+```text
 - base16.rb
 - colorful.rb
 - github.rb
@@ -212,7 +212,7 @@ In Driggl we decided to choose the _Base16_ theme with the _dark_ mode, and to a
 ```ruby
     # app/views/layouts/stylesheets.html.erb
 
-    <style><%= ::Rouge::Themes::Base16.mode(:dark).render(scope: '.highlight') %></style>
+    <style\><%= ::Rouge::Themes::Base16.mode(:dark).render(scope: '.highlight') %></style\>
 ```
 
 And the result you can see on this article.

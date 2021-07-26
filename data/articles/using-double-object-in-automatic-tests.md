@@ -44,7 +44,7 @@ The _double_ object, is an object that acts as another, mimics behaviour we chos
 Double objects have no methods (except few standard predefined ones), until we specify them. This is why the code above will return an error:
 
 ```ruby
-    <Double "Sample object"> received unexpected message :foo with (no args)
+    <Double "Sample object"\> received unexpected message :foo with (no args)
 ```
 
 If we want to make this test passing, we need to specify which messages _double_ object can take and which values it should return.

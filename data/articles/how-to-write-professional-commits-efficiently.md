@@ -45,7 +45,7 @@ Chris Beams in his article presented quite nice **7 rules** for his commit messa
 
 The first line of every single commit I'm adding looks like this:
 
-```
+```bash
     {{TYPE}}: {{Title}} (Maks 50 characters)
 ```
 

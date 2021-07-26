@@ -20,7 +20,7 @@ I love CQRS pattern in my web applications and experience shows me that the bene
 
 With one of my clients we decided to implement CQRS pattern to complement Domain Driven Design, and we figured out that there are some tricky parts not completely obvious at the beginning and we were frustrated that nobody actually described them well in the past.
 
-I've wrote about the[ ruby implementation of CQRS in the separate article](https://driggl.com/blog/a/cars-api-endpoints-in-rails-applications). Here I'll focus on more high-level content.
+I've wrote about the[ ruby implementation of CQRS in the separate article](https://driggl.com/blog/a/cqrs-api-endpoints-in-rails-applications). Here I'll focus on more high-level content.
 
 ### Challenges we faced
 

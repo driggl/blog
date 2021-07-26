@@ -53,8 +53,8 @@ JWT token allows us to create a completely independent authorization service tha
 
 When the service supports multiple authorization types, often adding only the token value is not sufficient. This is why it's common practice to prepend the token with the type we use:
 
-```
-    <token-type> <token value>
+```shell
+    <token-type\> <token value\>
 ```
 
 It was first introduced by W3C in [HTTP 1.0](https://tools.ietf.org/html/rfc1945) and reused across the whole web. This is why we end up with something like "Bearer fdalsfgjkvk2kjhi29".

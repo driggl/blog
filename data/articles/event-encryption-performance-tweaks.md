@@ -182,7 +182,7 @@ This way we'll always be able to achieve an environment, when only ONE encryptio
 
 Having that in mind, I've transformed the `encrypted_schema` to the form like tihis:
 
-```Ruby
+```ruby
     #  EventStoreClient's encryption schema
 
     def self.encryption_schema

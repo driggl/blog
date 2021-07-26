@@ -34,7 +34,7 @@ The first step is to place the OptinMonster's script tag into your HTML right be
   data-account="MY_ACCOUNT_ID"
   data-user="MY_USER_ID"
   async
-></script>
+\></script\>
 ```
 
 You should replace the _MY_ACCOUNT_ID_ and _MY_USER_ID_ placeholders with your individual identifiers.
@@ -50,14 +50,14 @@ So to solve this problem, what you need to do is just create a file _app.html_ i
 ```html
 # app.html
 
-<!DOCTYPE html>
-<html {{ HTML_ATTRS }}>
+<!DOCTYPE html\>
+<html {{ HTML_ATTRS }}\>
    
-  <head>
+  <head\>
         {{ HEAD }}  
-  </head>
+  </head\>
    
-  <body {{ BODY_ATTRS }}>
+  <body {{ BODY_ATTRS }}\>
         {{ APP }}    
     <script
       type="text/javascript"
@@ -65,9 +65,9 @@ So to solve this problem, what you need to do is just create a file _app.html_ i
       data-account="MY_ACCOUNT_ID"
       data-user="MY_USER_ID"
       async
-    ></script>
-  </body>
-</html>
+    \></script\>
+  </body\>
+</html\>
 ```
 
 This way you'll have the general HTML layout updated with an Optinmonster's script. All the _{{ TAG }}_ parts of the file will be replaced later by the Nuxt.js with dynamic content.
